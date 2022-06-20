@@ -16,4 +16,5 @@ Router.map(function () {
     this.route('show');
   });
   this.route('requests');
+  this.route('login');
 });
