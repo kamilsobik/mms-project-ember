@@ -5,8 +5,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     'ember-bootstrap': {
-      bootstrapVersion: 5,
-      importBootstrapCSS: true,
+      importBootstrapCSS: false,
+      blacklist: ['bs-popover', 'bs-accordion'],
+      bootstrapVersion: 5
     },
   });
 
