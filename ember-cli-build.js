@@ -7,7 +7,7 @@ module.exports = function (defaults) {
     'ember-bootstrap': {
       importBootstrapCSS: false,
       blacklist: ['bs-popover', 'bs-accordion'],
-      bootstrapVersion: 5
+      bootstrapVersion: 5,
     },
   });
 

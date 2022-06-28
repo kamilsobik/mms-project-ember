@@ -17,4 +17,13 @@ Router.map(function () {
   });
   this.route('requests');
   this.route('login');
+
+  this.route('app', function () {
+    this.route('user', function () {});
+  });
+
+  this.route('user', function () {
+    this.route('show');
+  });
+  this.route('users');
 });
