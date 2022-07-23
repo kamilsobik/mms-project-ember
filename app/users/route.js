@@ -12,7 +12,7 @@ export default class UsersRoute extends Route {
       },
       {
         id: 2,
-        username: 'user',
+        username: 'user',ember this.send
         password: 'user123',
         email: 'user@user.com',
         isRequestor: false,
