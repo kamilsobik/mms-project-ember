@@ -5,7 +5,6 @@ export default class RequestsRoute extends Route {
   @service store;
 
   async model() {
-    const requests = await this.store.findAll('request');
-    return requests;
+    return await this.store.findAll('request');
   }
 }
