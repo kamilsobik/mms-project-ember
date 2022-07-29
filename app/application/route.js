@@ -29,8 +29,7 @@ export default class ApplicationRoute extends Route {
     const request1 = {
       id: 1,
       type: 'breakdown',
-      requestor: user1Model,
-      responder: user2Model,
+      owner: user1Model,
       machine: 'machine 1',
       title: 'Problem with air cylinder',
       downtime: '30',
@@ -40,8 +39,7 @@ export default class ApplicationRoute extends Route {
     const request2 = {
       id: 2,
       type: 'fault',
-      requestor: user1Model,
-      responder: user2Model,
+      owner: user2Model,
       machine: 'machine 2',
       title: 'slow working station 3',
       downtime: '60',
@@ -51,8 +49,7 @@ export default class ApplicationRoute extends Route {
     const request3 = {
       id: 3,
       type: 'tpm',
-      requestor: user1Model,
-      responder: user2Model,
+      owner: user1Model,
       machine: 'machine 3',
       title: 'Problem with air cylinder',
       downtime: '250',

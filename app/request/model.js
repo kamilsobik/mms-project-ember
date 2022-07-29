@@ -6,5 +6,6 @@ export default class RequestModel extends Model {
   @attr('string') title;
   @attr('string') downtime;
   @attr('string') createdDate;
-  @belongsTo('user') user;
+  @attr('string') status;
+  @belongsTo('user') owner;
 }
