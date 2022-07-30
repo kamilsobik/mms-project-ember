@@ -4,7 +4,6 @@
       <th scope='col'>ID</th>
       <th scope='col'>Type</th>
       <th scope='col'>Requestor</th>
-      <th scope='col'>Responder</th>
       <th scope='col'>Machine</th>
       <th scope='col'>Title</th>
       <th scope='col'>Created date</th>
@@ -16,8 +15,7 @@
       <tr>
         <td>{{request.id}}</td>
         <td>{{request.type}}</td>
-        <td>{{request.requestor}}</td>
-        <td>{{request.responder}}</td>
+        <td>{{request.owner.username}}</td>
         <td>{{request.machine}}</td>
         <td>{{request.title}}</td>
         <td>{{request.createdDate}}</td>

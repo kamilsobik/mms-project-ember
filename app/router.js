@@ -7,14 +7,10 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('responder');
-  this.route('requestor');
   this.route('settings');
   this.route('kpi');
 
-  this.route('request', function () {
-    this.route('show');
-  });
+  this.route('request', function () {});
   this.route('requests');
   this.route('login');
 
@@ -22,8 +18,6 @@ Router.map(function () {
     this.route('user', function () {});
   });
 
-  this.route('user', function () {
-    this.route('show');
-  });
+  this.route('user', function () {});
   this.route('users');
 });
