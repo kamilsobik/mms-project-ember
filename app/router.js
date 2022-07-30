@@ -26,4 +26,5 @@ Router.map(function () {
     this.route('show');
   });
   this.route('users');
+  this.route('register');
 });
