@@ -20,4 +20,5 @@ Router.map(function () {
 
   this.route('user', function () {});
   this.route('users');
+  this.route('register');
 });
