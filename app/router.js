@@ -7,18 +7,22 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('settings');
-  this.route('kpi');
+  this.route('home', { path: '/' }, function () {
+    this.route('settings');
+    this.route('kpi');
 
-  this.route('request', function () {});
-  this.route('requests');
-  this.route('login');
+    this.route('request', function () {});
+    this.route('requests');
 
-  this.route('app', function () {
+    this.route('app', function () {
+      this.route('user', function () {});
+    });
+
     this.route('user', function () {});
+    this.route('users');
   });
 
-  this.route('user', function () {});
-  this.route('users');
+  this.route('login');
+
   this.route('register');
 });
