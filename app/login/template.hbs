@@ -1,11 +1,9 @@
 {{page-title 'Login'}}
 <Header>Login</Header>
 <div class='container mt-5'>
-
   <form {{on 'submit' this.onSubmit}}>
     <div class='mb-3 row'>
       <label for='username' class='col-sm-2 col-form-label'>Username</label>
-
       <div class='col-sm-10 form-floating mb-3'>
         <input
           type='text'
@@ -17,7 +15,6 @@
         <label for='floatingInput'>Username</label>
       </div>
     </div>
-
     <div class='mb-3 row'>
       <label
         for='inputPassword'
@@ -34,20 +31,10 @@
         <label for='floatingPassword'>Password</label>
       </div>
     </div>
-
     <div class='mb-3 mt-5 row'>
       <button type='submit' class='btn btn-success btn-lg'>Zaloguj</button>
     </div>
   </form>
-
-  <div class='mb-3 row mt-5'>
-    <button
-      type='button'
-      class='btn btn-success btn-lg'
-      {{on 'click' this.on0AuthLoginOrRegister}}
-    >Zaloguj przez konto google</button>
-  </div>
-
   <div class='mt-5'>
     <span>Nie mam konta. </span><LinkTo @route='register'>Zarejestruj</LinkTo>
   </div>
