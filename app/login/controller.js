@@ -39,7 +39,6 @@ export default class LoginController extends Controller {
         if (error) {
           return;
         }
-        const accessToken = authResult.accessToken;
         const profile = profileResult;
         await this.session.loginOrRegisterByAuth0(profile);
       });
