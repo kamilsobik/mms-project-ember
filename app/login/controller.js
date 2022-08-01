@@ -2,13 +2,15 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-import { storageFor } from 'ember-local-storage';
+import Auth0Lock from 'auth0-lock';
 
+const clientId = 'pVMVBa4Xdu2xiOZFI6EMfSEq9PNNdVYD';
+const domain = 'dev-9n0-z7z7.us.auth0.com';
 export default class LoginController extends Controller {
   @service store;
   @tracked loginValue;
   @tracked passwordValue;
-  @storageFor('logged-as') loggedAs;
+  @service session;
 
   @action
   onLoginChange(event) {
@@ -23,15 +25,24 @@ export default class LoginController extends Controller {
   @action
   async onSubmit(event) {
     event.preventDefault();
-    const users = await this.store.query('user', {
-      filter: { username: this.loginValue, password: this.passwordValue },
-    });
+    const { loginValue, passwordValue } = this;
+    await this.session.loginUser(loginValue, passwordValue);
+  }
 
-    const isUserExist = Boolean(users.length);
-    if (isUserExist) {
-      const user = users.firstObject;
-      this.loggedAs.set('id', user.id);
-      window.location.href = '/';
-    }
+  @action
+  async on0AuthLoginOrRegister() {
+    const option = { auth: { redirect: false } };
+    const lock = new Auth0Lock(clientId, domain, option);
+    lock.show({ allowedConnections: ['google-oauth2'] });
+    lock.on('authenticated', (authResult) => {
+      lock.getUserInfo(authResult.accessToken, async (error, profileResult) => {
+        if (error) {
+          return;
+        }
+        const accessToken = authResult.accessToken;
+        const profile = profileResult;
+        await this.session.loginOrRegisterByAuth0(profile);
+      });
+    });
   }
 }

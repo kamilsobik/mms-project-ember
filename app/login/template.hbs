@@ -32,7 +32,15 @@
       </div>
     </div>
     <div class='mb-3 mt-5 row'>
-      <button type='submit' class='btn btn-success btn-lg'>Zaloguj</button>
+      <button type='submit' class='btn btn-success btn-lg'>Zaloguj się przez
+        login i hasło</button>
+    </div>
+    <div class='mb-3 row'>
+      <button
+        type='button'
+        class='btn btn-success btn-lg'
+        {{on 'click' this.on0AuthLoginOrRegister}}
+      >Zaloguj się przez konto google</button>
     </div>
   </form>
   <div class='mt-5'>
