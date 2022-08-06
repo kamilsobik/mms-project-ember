@@ -18,7 +18,7 @@
         <td>{{request.owner.username}}</td>
         <td>{{request.machine}}</td>
         <td>{{request.title}}</td>
-        <td>{{request.createdDate}}</td>
+        <td>{{format-date request.createdAt 'long'}}</td>
       </tr>
     {{/each}}
   </tbody>
