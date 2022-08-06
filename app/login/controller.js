@@ -3,9 +3,11 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import Auth0Lock from 'auth0-lock';
+import ENV from 'mms-ember-project/config/environment';
 
-const clientId = 'pVMVBa4Xdu2xiOZFI6EMfSEq9PNNdVYD';
-const domain = 'dev-9n0-z7z7.us.auth0.com';
+const clientId = ENV.AUTH0_CLIENT_ID;
+const domain = ENV.AUTH0_DOMAIN;
+
 export default class LoginController extends Controller {
   @service store;
   @tracked loginValue;
