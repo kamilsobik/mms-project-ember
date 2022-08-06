@@ -1,20 +1,24 @@
-{{page-title 'Login'}}
-<Header>Login</Header>
+{{page-title 'Register'}}
+<Header>Register</Header>
+
 <div class='container mt-5'>
+
   <form {{on 'submit' this.onSubmit}}>
     <div class='mb-3 row'>
       <label for='username' class='col-sm-2 col-form-label'>Username</label>
+
       <div class='col-sm-10 form-floating mb-3'>
         <input
           type='text'
           class='form-control'
           id='floatingInput'
           placeholder='name@example.com'
-          {{on 'input' this.onLoginChange}}
+          {{on 'input' (fn this.onPropertyChange 'username')}}
         />
         <label for='floatingInput'>Username</label>
       </div>
     </div>
+
     <div class='mb-3 row'>
       <label
         for='inputPassword'
@@ -26,25 +30,35 @@
           class='form-control'
           id='floatingPassword'
           placeholder='Password'
-          {{on 'input' this.onPasswordChange}}
+          {{on 'input' (fn this.onPropertyChange 'password')}}
         />
         <label for='floatingPassword'>Password</label>
       </div>
     </div>
-    <div class='mb-3 mt-5 row'>
-      <button type='submit' class='btn btn-success btn-lg'>Zaloguj się przez
-        login i hasło</button>
-    </div>
+
     <div class='mb-3 row'>
-      <button
-        type='button'
-        class='btn btn-success btn-lg'
-        {{on 'click' this.on0AuthLoginOrRegister}}
-      >Zaloguj się przez konto google</button>
+      <label for='username' class='col-sm-2 col-form-label'>Email</label>
+
+      <div class='col-sm-10 form-floating mb-3'>
+        <input
+          type='email'
+          class='form-control'
+          id='floatingEmail'
+          placeholder='name@example.com'
+          {{on 'input' (fn this.onPropertyChange 'email')}}
+        />
+        <label for='floatingInput'>Email</label>
+      </div>
+    </div>
+
+    <div class='mb-3 mt-5 row'>
+      <button type='submit' class='btn btn-success btn-lg'>Zarejestruj nowego
+        użtykownika</button>
     </div>
   </form>
+
   <div class='mt-5'>
-    <span>Nie mam konta. </span><LinkTo @route='register'>Zarejestruj</LinkTo>
+    <span>Wróc do strony </span><LinkTo @route='login'>logowania</LinkTo>
   </div>
 </div>
 {{outlet}}
