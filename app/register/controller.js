@@ -9,18 +9,8 @@ export default class RegisterController extends Controller {
   @storageFor('logged-as') loggedAs;
 
   @action
-  onUsernameChange(event) {
-    this.model.username = event.target.value;
-  }
-
-  @action
-  onEmailChange(event) {
-    this.model.email = event.target.value;
-  }
-
-  @action
-  onPasswordChange(event) {
-    this.model.password = event.target.value;
+  onPropertyChange(key, event) {
+    this.model[key] = event.target.value;
   }
 
   @action

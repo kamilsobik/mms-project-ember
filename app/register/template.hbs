@@ -13,7 +13,7 @@
           class='form-control'
           id='floatingInput'
           placeholder='name@example.com'
-          {{on 'input' this.onUsernameChange}}
+          {{on 'input' (fn this.onPropertyChange 'username')}}
         />
         <label for='floatingInput'>Username</label>
       </div>
@@ -30,7 +30,7 @@
           class='form-control'
           id='floatingPassword'
           placeholder='Password'
-          {{on 'input' this.onPasswordChange}}
+          {{on 'input' (fn this.onPropertyChange 'password')}}
         />
         <label for='floatingPassword'>Password</label>
       </div>
@@ -45,7 +45,7 @@
           class='form-control'
           id='floatingEmail'
           placeholder='name@example.com'
-          {{on 'input' this.onEmailChange}}
+          {{on 'input' (fn this.onPropertyChange 'email')}}
         />
         <label for='floatingInput'>Email</label>
       </div>
