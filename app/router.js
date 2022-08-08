@@ -25,4 +25,6 @@ Router.map(function () {
   this.route('login');
 
   this.route('register');
+  this.route('open-request');
+  this.route('close-request');
 });
