@@ -27,5 +27,11 @@ export default class OpenRequestController extends Controller {
   async onCreatNewRequest(event) {
     event.preventDefault();
     await this.model.save();
+    this.redirectionAfterNewRequest();
+  }
+
+  redirectionAfterNewRequest() {
+    this.router.transitionTo('home.requests');
+    return;
   }
 }
