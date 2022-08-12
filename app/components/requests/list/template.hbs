@@ -1,7 +1,7 @@
 <table class='table table-striped'>
   <thead>
     <tr>
-      <th scope='col'>ID</th>
+      <th scope='col'>Status</th>
       <th scope='col'>Type</th>
       <th scope='col'>Requestor</th>
       <th scope='col'>Machine</th>
@@ -13,7 +13,7 @@
   <tbody>
     {{#each @model as |request|}}
       <tr>
-        <td>{{request.id}}</td>
+        <td>{{request.status}}</td>
         <td>{{request.type}}</td>
         <td>{{request.owner.username}}</td>
         <td>{{request.machine}}</td>

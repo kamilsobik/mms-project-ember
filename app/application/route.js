@@ -32,7 +32,7 @@ export default class ApplicationRoute extends Route {
       id: 3,
       username: 'responder',
       password: 'responder123',
-      email: 'responder.gmail.com',
+      email: 'responder@gmail.com',
       isRequestor: false,
       isAdmin: false,
     };
@@ -47,54 +47,54 @@ export default class ApplicationRoute extends Route {
 
     const request1 = {
       id: 1,
-      type: 'breakdown',
+      type: '3.0 breakdown',
       owner: user1Model,
       machine: 'machine 1',
       title: 'Problem with air cylinder',
       downtime: '30',
-      createdAt: new Date('05/10/2022'),
+      createdAt: new Date('08.06.2022 15:35'),
       status: 'open',
     };
     const request2 = {
       id: 2,
-      type: 'fault',
+      type: '2.0 fault',
       owner: user2Model,
       machine: 'machine 2',
       title: 'slow working station 3',
       downtime: '60',
-      createdAt: new Date('05/10/2022'),
+      createdAt: new Date('08.10.2022 9:30'),
       status: 'open',
     };
     const request3 = {
       id: 3,
-      type: 'tpm',
+      type: '1.0 tpm',
       owner: user2Model,
       machine: 'machine 3',
       title: 'Problem with air cylinder',
       downtime: '120',
-      createdAt: new Date('05/10/2022'),
+      createdAt: new Date('08.09.2022 23:11'),
       status: 'closed',
     };
 
     const request4 = {
       id: 4,
-      type: 'breakdown',
+      type: '3.0 breakdown',
       owner: user1Model,
       machine: 'machine 3',
       title: 'Problem with motor',
       downtime: '75',
-      createdAt: new Date('05/10/2022'),
+      createdAt: new Date('08.08.2022 04:50'),
       status: 'closed',
     };
 
     const request5 = {
       id: 5,
-      type: 'fault',
+      type: '2.0 fault',
       owner: user1Model,
       machine: 'machine 2',
       title: 'robot need change loading position',
       downtime: '30',
-      createdAt: new Date('05/10/2022'),
+      createdAt: new Date('08.07.2022 16:59'),
       status: 'closed',
     };
 
