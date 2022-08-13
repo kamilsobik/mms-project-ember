@@ -4,7 +4,11 @@
   <div class='row'>
     <div class='col'>
       <div class='form-floating mb-3' {{on 'input' this.onTypeChange}}>
-        <select class='form-select' aria-label='Default select example'>
+        <select
+          class='form-select'
+          aria-label='Default select example'
+          value={{@type}}
+        >
           <option selected>Select request type</option>
           <option value='1.0 tpm'>1.0 TPM</option>
           <option value='2.0 fault'>2.0 Fault</option>
@@ -14,7 +18,11 @@
     </div>
     <div class='col'>
       <div class='form-floating mb-3' {{on 'input' this.onMachineChange}}>
-        <select class='form-select' aria-label='Default select example'>
+        <select
+          class='form-select'
+          aria-label='Default select example'
+          value={{@machine}}
+        >
           <option selected>Select machine</option>
           <option value='Machine 1'>Machine 1</option>
           <option value='Machine 2'>Machine 2</option>
@@ -29,6 +37,7 @@
       class='form-control'
       id='floatingtext'
       placeholder='text'
+      value={{@title}}
       {{on 'input' this.onTitleChange}}
     />
     <label for='floatingPassword'>Explain problem</label>
@@ -38,6 +47,7 @@
     <button
       type='button'
       class='btn btn-success btn-lg mt-5'
+      disabled={{@hasEmptyField}}
       {{on 'click' this.onCreatNewRequest}}
     >Create request</button>
   </div>

@@ -7,6 +7,12 @@ export default class OpenRequestController extends Controller {
   @service store;
   @service router;
   @tracked loggedAs;
+  @service session;
+  @tracked currentUser;
+
+  get hasEmptyField() {
+    return !(this.title && this.machine && this.type);
+  }
 
   @action
   onTypeChange(event) {
@@ -24,8 +30,8 @@ export default class OpenRequestController extends Controller {
   }
 
   @action
-  async onCreatNewRequest(event) {
-    event.preventDefault();
+  async onCreatNewRequest() {
+    this.model.owner = this.session.currentUser;
     await this.model.save();
     this.redirectionAfterNewRequest();
   }
