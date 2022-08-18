@@ -9,6 +9,10 @@ export default class OpenRequestController extends Controller {
   @tracked loggedAs;
   @service session;
   @tracked currentUser;
+  @tracked title;
+  @tracked machine;
+  @tracked type;
+  @tracked record;
 
   get hasEmptyField() {
     return !(this.title && this.machine && this.type);
@@ -16,23 +20,32 @@ export default class OpenRequestController extends Controller {
 
   @action
   onTypeChange(event) {
-    this.model.type = event.target.value;
+    this.type = event.target.value;
   }
 
   @action
   onMachineChange(event) {
-    this.model.machine = event.target.value;
+    this.machine = event.target.value;
   }
 
   @action
   onTitleChange(event) {
-    this.model.title = event.target.value;
+    this.title = event.target.value;
   }
 
   @action
   async onCreatNewRequest() {
-    this.model.owner = this.session.currentUser;
-    await this.model.save();
+    this.record = {
+      title: this.title,
+      type: this.type,
+      machine: this.machine,
+      owner: this.session.currentUser,
+    };
+    const createNewRequest = await this.store.createRecord(
+      'request',
+      this.record
+    );
+    await createNewRequest.save();
     this.redirectionAfterNewRequest();
   }
 
