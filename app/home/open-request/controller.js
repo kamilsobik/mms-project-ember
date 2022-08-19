@@ -6,8 +6,9 @@ import { tracked } from '@glimmer/tracking';
 export default class OpenRequestController extends Controller {
   @service store;
   @service router;
-  @tracked loggedAs;
   @service session;
+
+  @tracked loggedAs;
   @tracked currentUser;
   @tracked title;
   @tracked machine;
