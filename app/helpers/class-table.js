@@ -1,7 +1,6 @@
 import { helper } from '@ember/component/helper';
 
 function classTable([typeRequest]) {
-  console.log(typeRequest);
   let newTableClass = 'table-primary';
   if (typeRequest === '1.0 tpm') {
     newTableClass = 'table-success';
