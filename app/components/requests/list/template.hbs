@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     {{#each @model as |request|}}
-      <tr>
+      <tr class={{class-table request.type}}>
         <td>{{request.status}}</td>
         <td>{{request.type}}</td>
         <td>{{request.owner.username}}</td>
