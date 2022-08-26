@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
 
-export default class HomeOpenRequestComponent extends Component {
+export default class ProvidersOpenRequestComponent extends Component {
   @service store;
   @service session;
   @service router;
@@ -31,12 +31,11 @@ export default class HomeOpenRequestComponent extends Component {
 
   redirectionAfterNewRequest() {
     this.router.transitionTo('home.requests');
-    return;
   }
 
   willDestroy() {
     super.willDestroy(...arguments);
-    if (this.record.hasDirtyAttributes) {
+    if (this.record.isNew) {
       this.record.destroyRecord();
     }
   }
