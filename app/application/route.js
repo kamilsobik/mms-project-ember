@@ -52,7 +52,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 1',
       title: 'Problem with air cylinder',
       downtime: '30',
-      createdAt: new Date('08.06.2022 15:35'),
+      createdAt: '08.06.2022 15:35',
       status: 'open',
     };
     const request2 = {
@@ -62,7 +62,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 2',
       title: 'slow working station 3',
       downtime: '60',
-      createdAt: new Date('08.10.2022 9:30'),
+      createdAt: '08.10.2022 9:30',
       status: 'open',
     };
     const request3 = {
@@ -72,7 +72,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 3',
       title: 'Problem with air cylinder',
       downtime: '120',
-      createdAt: new Date('08.09.2022 23:11'),
+      createdAt: '08.09.2022 23:11',
       status: 'closed',
     };
 
@@ -83,7 +83,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 3',
       title: 'Problem with motor',
       downtime: '75',
-      createdAt: new Date('08.08.2022 04:50'),
+      createdAt: '08.08.2022 04:50',
       status: 'closed',
     };
 
@@ -94,7 +94,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 2',
       title: 'robot need change loading position',
       downtime: '30',
-      createdAt: new Date('08.07.2022 16:59'),
+      createdAt: '08.07.2022 16:59',
       status: 'closed',
     };
 
