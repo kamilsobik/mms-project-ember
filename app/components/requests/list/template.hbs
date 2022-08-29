@@ -1,7 +1,7 @@
 <table class='table table-striped'>
-  <thead>
+  <thead class='table-active'>
     <tr>
-      <th scope='col'>ID</th>
+      <th scope='col'>Status</th>
       <th scope='col'>Type</th>
       <th scope='col'>Requestor</th>
       <th scope='col'>Machine</th>
@@ -12,13 +12,13 @@
   </thead>
   <tbody>
     {{#each @model as |request|}}
-      <tr>
-        <td>{{request.id}}</td>
+      <tr class={{class-table request.type}}>
+        <td>{{request.status}}</td>
         <td>{{request.type}}</td>
         <td>{{request.owner.username}}</td>
         <td>{{request.machine}}</td>
         <td>{{request.title}}</td>
-        <td>{{format-date request.createdAt 'long'}}</td>
+        <td>{{moment-format request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
       </tr>
     {{/each}}
   </tbody>

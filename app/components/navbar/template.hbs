@@ -1,4 +1,4 @@
-<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
   <div class='container'>
     <LinkTo class='navbar-brand' @route='home.index'>Main page</LinkTo>
     <button
@@ -18,6 +18,12 @@
         </li>
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.requests'>Requests</LinkTo>
+        </li>
+        <li class='nav-item'>
+          <LinkTo class='nav-link' @route='home.open-request'>Open new request</LinkTo>
+        </li>
+        <li class='nav-item'>
+          <LinkTo class='nav-link' @route='home.close-request'>Close request</LinkTo>
         </li>
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.users'>Users</LinkTo>

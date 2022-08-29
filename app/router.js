@@ -10,19 +10,17 @@ Router.map(function () {
   this.route('home', { path: '/' }, function () {
     this.route('settings');
     this.route('kpi');
-
     this.route('request', function () {});
     this.route('requests');
-
+    this.route('open-request');
+    this.route('close-request');
     this.route('app', function () {
       this.route('user', function () {});
     });
-
     this.route('user', function () {});
     this.route('users');
   });
 
   this.route('login');
-
   this.route('register');
 });

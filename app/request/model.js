@@ -5,7 +5,7 @@ export default class RequestModel extends Model {
   @attr('string') machine;
   @attr('string') title;
   @attr('string') downtime;
-  @attr('string') status;
-  @attr('date') createdAt;
+  @attr('string', { defaultValue: 'open' }) status;
+  @attr('date', { defaultValue: () => new Date() }) createdAt;
   @belongsTo('user', { autoSave: true }) owner;
 }
