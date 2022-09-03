@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "auth0-lock": "^11.33.2",
+    "ember-google-charts": "^1.8.3",
     "moment": "^2.29.4"
   }
 }
