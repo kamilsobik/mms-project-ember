@@ -19,6 +19,7 @@ Router.map(function () {
     });
     this.route('user', function () {});
     this.route('users');
+    this.route('request-archive');
   });
 
   this.route('login');
