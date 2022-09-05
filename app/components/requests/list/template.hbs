@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each @model as |request|}}
+    {{#each this.filteredRequests as |request|}}
       <tr class={{class-table request.type}}>
         <td>{{request.status}}</td>
         <td>{{request.type}}</td>
