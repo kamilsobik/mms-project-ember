@@ -1,0 +1,26 @@
+<div class='container'>
+  <table class='table table-striped'>
+    <thead class='table-active'>
+      <tr>
+        <th scope='col'>Status</th>
+        <th scope='col'>Type</th>
+        <th scope='col'>Requestor</th>
+        <th scope='col'>Machine</th>
+        <th scope='col'>Title</th>
+        <th scope='col'>Created date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.AllRequests as |request|}}
+        <tr class={{class-table request.type}}>
+          <td>{{request.status}}</td>
+          <td>{{request.type}}</td>
+          <td>{{request.owner.username}}</td>
+          <td>{{request.machine}}</td>
+          <td>{{request.title}}</td>
+          <td>{{moment-format request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
