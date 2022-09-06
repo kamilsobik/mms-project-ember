@@ -20,7 +20,9 @@
           <td>{{request.machine}}</td>
           <td>{{request.title}}</td>
           <td>{{moment-format request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
-          <td><button type='button' class='btn btn-danger'>Close</button></td>
+          <td><button type='submit' class='btn btn-danger'>
+              <FaIcon @icon='check' />
+            </button></td>
         </tr>
       {{/each}}
     </tbody>
