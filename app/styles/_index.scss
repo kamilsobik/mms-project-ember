@@ -1,9 +1,39 @@
+.divider:after,
+.divider:before {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.login-with-google {
+  height: 46px;
+}
+
+.button-login {
+  height: 46px;
+  width: 191px;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+}
+
 .container-index {
   text-align: center;
   margin-top: 50px;
+}
 
-  .btn {
-    height: 160px;
-    border-radius: 20px;
-  }
+.btn-main {
+  height: 160px;
+  border-radius: 20px;
 }
