@@ -1,0 +1,45 @@
+<Modal-dialog @translucentOverlay={{true}}>
+  <div class='modal-dialog modal-xl'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title'>Close request</h5>
+      </div>
+      <div class='modal-body'>
+        <div class='mb-3'>
+          <label for='downtimeInput' class='form-label'>Enter downtime (in
+            minutes)*</label>
+          <input
+            type='number'
+            class='form-control'
+            id='downtimeInput'
+            value={{this.downtime}}
+            {{on 'input' this.onDowntimeChange}}
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='requestSolition' class='form-label'>Enter description*</label>
+          <textarea
+            class='form-control'
+            id='requestSolution'
+            rows='3'
+            value={{this.solution}}
+            {{on 'input' this.onSolutionChange}}
+          ></textarea>
+        </div>
+        <div>* required</div>
+      </div>
+      <div class='modal-footer'>
+        <button
+          type='submit'
+          class='btn btn-danger'
+          {{on 'click' this.onCancel}}
+        >Cancel</button>
+        <button
+          type='button'
+          class='btn btn-success'
+          {{on 'click' this.onSaveChange}}
+        >Close request</button>
+      </div>
+    </div>
+  </div>
+</Modal-dialog>

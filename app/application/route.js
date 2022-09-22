@@ -52,8 +52,9 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 1',
       title: 'Problem with air cylinder',
       downtime: '30',
-      createdAt: '08.06.2022 15:35',
-      status: 'open',
+      createdAt: '20-09-2022 20:56:37',
+      status: 'closed',
+      solution: 'Replace sensor A32.4',
     };
     const request2 = {
       id: 2,
@@ -63,7 +64,8 @@ export default class ApplicationRoute extends Route {
       title: 'slow working station 3',
       downtime: '60',
       createdAt: '08.10.2022 9:30',
-      status: 'open',
+      status: 'closed',
+      solution: 'Checking program PLC',
     };
     const request3 = {
       id: 3,
@@ -74,6 +76,7 @@ export default class ApplicationRoute extends Route {
       downtime: '120',
       createdAt: '08.09.2022 23:11',
       status: 'closed',
+      solution: 'Replace air cylinder',
     };
 
     const request4 = {
@@ -85,6 +88,7 @@ export default class ApplicationRoute extends Route {
       downtime: '75',
       createdAt: '08.08.2022 04:50',
       status: 'closed',
+      solution: 'Find problem with PLC - change logic in PLC',
     };
 
     const request5 = {
@@ -96,6 +100,7 @@ export default class ApplicationRoute extends Route {
       downtime: '30',
       createdAt: '08.07.2022 16:59',
       status: 'closed',
+      solution: 'change position',
     };
 
     const request1Model = this.store.createRecord('request', request1);
