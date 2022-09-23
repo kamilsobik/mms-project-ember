@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import moment from 'moment';
 
 export default class ApplicationRoute extends Route {
   @service store;
@@ -52,7 +53,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 1',
       title: 'Problem with air cylinder',
       downtime: '30',
-      createdAt: '20-09-2022 20:56:37',
+      createdAt: moment('2022-09-21 14:05:16').toDate(),
       status: 'closed',
       solution: 'Replace sensor A32.4',
     };
@@ -63,7 +64,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 2',
       title: 'slow working station 3',
       downtime: '60',
-      createdAt: '08.10.2022 9:30',
+      createdAt: moment('08.10.2022 9:30').toDate(),
       status: 'closed',
       solution: 'Checking program PLC',
     };
@@ -74,7 +75,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 3',
       title: 'Problem with air cylinder',
       downtime: '120',
-      createdAt: '08.09.2022 23:11',
+      createdAt: moment('08.09.2022 23:11').toDate(),
       status: 'closed',
       solution: 'Replace air cylinder',
     };
@@ -86,7 +87,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 3',
       title: 'Problem with motor',
       downtime: '75',
-      createdAt: '08.08.2022 04:50',
+      createdAt: moment('08.08.2022 04:50').toDate(),
       status: 'closed',
       solution: 'Find problem with PLC - change logic in PLC',
     };
@@ -98,7 +99,7 @@ export default class ApplicationRoute extends Route {
       machine: 'machine 2',
       title: 'robot need change loading position',
       downtime: '30',
-      createdAt: '08.07.2022 16:59',
+      createdAt: moment('08.07.2022 16:59').toDate(),
       status: 'closed',
       solution: 'change position',
     };
