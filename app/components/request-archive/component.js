@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 
 export default class RequestArchiveComponent extends Component {
-  get AllRequests() {
+  get allRequests() {
     return this.args.model
       .filter(({ status }) => status === 'closed')
       .sortBy('createdAt')
