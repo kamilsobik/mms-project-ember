@@ -1,27 +1,27 @@
 <div class='container-index'>
   <h3>Computerised Maintenance Management System</h3>
   <div class='d-flex m-5'>
-    <button
-      class='btn-main btn col-5 mx-auto btn-danger'
-      type='button'
-      {{on 'click' this.onRequest}}
-    >Open requests</button>
-    <button
-      class='btn-main btn col-5 mx-auto btn-success'
-      type='button'
-      {{on 'click' this.onKpi}}
-    >KPI</button>
+    <Shared::Button
+      class='btn-danger'
+      @label='Open request'
+      @onClick={{this.onShowRequest}}
+    />
+    <Shared::Button
+      class='btn-success'
+      @label='KPI'
+      @onClick={{this.onShowKpi}}
+    />
   </div>
   <div class='d-flex m-5'>
-    <button
-      class='btn-main btn col-5 mx-auto btn-primary'
-      type='button'
-      {{on 'click' this.onArchive}}
-    >Archive</button>
-    <button
-      class='btn-main btn col-5 mx-auto btn-warning'
-      type='button'
-      {{on 'click' this.onLogout}}
-    >Logout</button>
+    <Shared::Button
+      class='btn-primary'
+      @label='Archive'
+      @onClick={{this.onShowArchive}}
+    />
+    <Shared::Button
+      class='btn-warning'
+      @label='Logout'
+      @onClick={{this.onShowLogout}}
+    />
   </div>
 </div>
