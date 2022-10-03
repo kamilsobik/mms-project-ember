@@ -29,16 +29,26 @@
         <div>* required</div>
       </div>
       <div class='modal-footer'>
-        <button
+        <Shared::Button
+          class='btn btn-danger'
+          @label='Cancel'
+          @onClick={{this.onCancel}}
+        />
+        <Shared::Button
+          class='btn btn-success'
+          @label='Close request'
+          @onClick={{this.onSaveChange}}
+        />
+        {{!-- <button
           type='submit'
           class='btn btn-danger'
           {{on 'click' this.onCancel}}
-        >Cancel</button>
-        <button
+        >Cancel</button> --}}
+        {{!-- <button
           type='button'
           class='btn btn-success'
           {{on 'click' this.onSaveChange}}
-        >Close request</button>
+        >Close request</button> --}}
       </div>
     </div>
   </div>

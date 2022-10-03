@@ -5,13 +5,13 @@
   <td>{{@request.machine}}</td>
   <td>{{@request.title}}</td>
   <td>{{moment-format @request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
-  <td align='center'><button
-      type='button'
+  <td align='center'>
+    <Shared::Button
       class='btn btn-danger'
-      {{on 'click' this.onShowModal}}
-    >
-      <FaIcon @icon='check' />
-    </button></td>
+      @label='close'
+      @onClick={{this.onShowModal}}
+    />
+  </td>
 </tr>
 
 {{#if this.isShowCreateModal}}

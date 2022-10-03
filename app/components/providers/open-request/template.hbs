@@ -48,11 +48,11 @@
     <label for='floatingPassword'>Explain problem</label>
   </div>
   <div class='d-grid gap-2'>
-    <button
-      type='button'
-      class='btn btn-success btn-lg mt-5'
+    <Shared::Button
+      class='btn-success btn-lg mt-5'
+      @label='Create request'
       disabled={{this.hasEmptyField}}
-      {{on 'click' this.onCreatNewRequest}}
-    >Create request</button>
+      @onClick={{this.onCreatNewRequest}}
+    />
   </div>
 </div>
