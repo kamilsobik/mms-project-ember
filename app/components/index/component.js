@@ -7,22 +7,22 @@ export default class IndexComponent extends Component {
   @service router;
 
   @action
-  onLogout() {
+  onShowLogout() {
     this.session.logoutUser();
   }
 
   @action
-  onRequest() {
+  onShowRequest() {
     this.router.transitionTo('home.requests');
   }
 
   @action
-  onKpi() {
+  onShowKpi() {
     this.router.transitionTo('home.kpi');
   }
 
   @action
-  onArchive() {
+  onShowArchive() {
     this.router.transitionTo('home.request-archive');
   }
 }

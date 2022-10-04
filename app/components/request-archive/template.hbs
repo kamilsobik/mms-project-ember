@@ -2,17 +2,17 @@
   <table class='table table-striped'>
     <thead class='table-active'>
       <tr>
-        <th scope='col'>Status</th>
         <th scope='col'>Type</th>
         <th scope='col'>Requestor</th>
         <th scope='col'>Machine</th>
         <th scope='col'>Title</th>
+        <th scope='col'>Solution</th>
+        <th scope='col'>Downtime [min]</th>
         <th scope='col'>Created date</th>
-        <th scope='col'>Close request</th>
       </tr>
     </thead>
     <tbody>
-      <RequestTable @closedRequest={{this.closedfilteredRequests}} />
+      <ArchiveTable @requestArchive={{this.allClosedRequests}} />
     </tbody>
   </table>
 </div>
