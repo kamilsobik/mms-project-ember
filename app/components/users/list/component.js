@@ -5,7 +5,7 @@ export default class UsersListComponent extends Component {
   @service store;
   @service session;
 
-  get filteredUserList() {
+  get sortedUserList() {
     return this.args.model.sortBy('userType');
   }
 }
