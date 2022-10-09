@@ -3,10 +3,10 @@
     <tr>
       <th scope='col'>ID</th>
       <th scope='col'>Username</th>
-      <th scope='col'>Password</th>
       <th scope='col'>Email</th>
       <th scope='col'>Requestor</th>
       <th scope='col'>Admin</th>
+      <th scope='col'>Edit user</th>
     </tr>
   </thead>
   <tbody>
@@ -14,10 +14,16 @@
       <tr>
         <td>{{user.id}}</td>
         <td>{{user.username}}</td>
-        <td>{{user.password}}</td>
         <td>{{user.email}}</td>
         <td>{{user.isRequestor}}</td>
         <td>{{user.isAdmin}}</td>
+        <td align='center'><button
+            type='button'
+            class='btn btn-success'
+            {{!-- {{on 'click' this.onShowModal}} --}}
+          >
+            <FaIcon @icon='user-pen' />
+          </button></td>
       </tr>
     {{/each}}
   </tbody>
