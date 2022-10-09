@@ -1,0 +1,62 @@
+<ModalDialog>
+  <div class='modal-dialog modal-xl'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title'>Edit user: {{@user.username}}</h5>
+      </div>
+      <div class='modal-body'>
+        <div class='mb-3'>
+          <label for='emailUserInput' class='form-label'>Enter new email</label>
+          <input
+            type='e-mail'
+            class='form-control'
+            id='downtimeInput'
+            placeholder='{{@user.email}}'
+            value={{this.email}}
+            {{on 'input' this.onEmailChange}}
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='passwordUserInput' class='form-label'>Enter new password</label>
+          <input
+            type='password'
+            class='form-control'
+            id='passwordInput'
+            placeholder='{{@user.password}}'
+            value={{this.password}}
+            {{on 'input' this.onPasswordChange}}
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='userTypeInput' class='form-label'>Edit user type:</label>
+          <div
+            class='form-floating mb-3'
+            {{on 'input' (fn this.onUserTypeChange 'userType')}}
+          >
+            <select
+              class='form-select'
+              aria-label='Default select example'
+              value={{@user.userType}}
+            >
+              <option value='requestor'>Requestor</option>
+              <option value='responder'>Responder</option>
+              <option value='admin'>Admin</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='modal-footer'>
+        <button
+          type='submit'
+          class='btn btn-danger'
+          {{on 'click' this.onCancel}}
+        >Cancel</button>
+        <button
+          type='button'
+          class='btn btn-success'
+          {{on 'click' this.onSaveChange}}
+        >Close request</button>
+      </div>
+    </div>
+  </div>
+</ModalDialog>
