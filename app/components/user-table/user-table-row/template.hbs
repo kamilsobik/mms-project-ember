@@ -1,0 +1,17 @@
+<tr class={{class-user-table @user.userType}}>
+  <td>{{@user.id}}</td>
+  <td>{{@user.username}}</td>
+  <td>{{@user.email}}</td>
+  <td>{{@user.userType}}</td>
+  <td align='center'><button
+      type='button'
+      class='btn btn-success'
+      {{!-- {{on 'click' this.onShowModal}} --}}
+    >
+      <FaIcon @icon='user-pen' />
+    </button></td>
+</tr>
+
+{{#if this.isShowUserModal}}
+  <Modal::EditUser @onClose={{this.onHideModal}} @user={{@user}} />
+{{/if}}
