@@ -11,12 +11,6 @@ export default class SessionService extends Service {
   get isUserLoggedIn() {
     return Boolean(this.loggedAs.get('id'));
   }
-  get userLoggedInUsername() {
-    return Boolean.this.loggedAs.get('username');
-  }
-  get userLoggedInUserType() {
-    return Boolean.this.loggedAs.get('userType');
-  }
 
   async loginUser(login, password) {
     const users = await this.store.query('user', {
