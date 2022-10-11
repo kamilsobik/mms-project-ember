@@ -47,6 +47,11 @@
       </div>
       <div class='modal-footer'>
         <Shared::Button
+          class='btn-dark'
+          @label='Delete user'
+          @onClick={{this.onDeleteUser}}
+        />
+        <Shared::Button
           class='btn-danger'
           @label='Cancel'
           @onClick={{this.onCancel}}

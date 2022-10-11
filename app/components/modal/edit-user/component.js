@@ -22,6 +22,13 @@ export default class ModalEditUserComponent extends Component {
     await this.args.user.save();
     this.args.onClose();
   }
+
+  @action
+  async onDeleteUser() {
+    await this.args.user.destroyRecord();
+    this.args.onClose();
+  }
+
   @action
   onCancel() {
     this.args.user.rollbackAttributes();
