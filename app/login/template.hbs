@@ -31,23 +31,19 @@
             <label class='form-label' for='password'>Password</label>
           </div>
           <div class='text-center text-lg-start mt-4 pt-2'>
-            <button
-              type='submit'
-              class='btn btn-primary btn-lg button-login'
-            >Login</button>
-            <button
-              type='submit'
-              class='btn'
-              {{on 'click' this.on0AuthLoginOrRegister}}
-            >
-              <img
-                src='/assets/images/btn_google_signin_light_focus_web.png'
-                class='login-with-google'
-                alt='login with google button'
-              />
-            </button>
+            <Shared::Button
+              class='btn-primary btn-lg button-login'
+              @label='Login'
+              @type='submit'
+            />
+            <Shared::Button
+              @type='submit'
+              @onClick={{this.on0AuthLoginOrRegister}}
+              @src='/assets/images/btn_google_signin_light_focus_web.png'
+              @alt='login with google'
+            />
             <p class='small fw-bold mt-2 pt-1 mb-0'>Don't have an account?
-              <LinkTo @route='register'>Zarejestruj</LinkTo>
+              <LinkTo @route='register'>Register new user</LinkTo>
             </p>
           </div>
         </form>

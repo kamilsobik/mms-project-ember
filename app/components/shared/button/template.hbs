@@ -3,4 +3,7 @@
   type={{this.type}}
   {{on 'click' this.onClick}}
   ...attributes
->{{@label}}</button>
+>
+  {{#if @faIcon}} <FaIcon @icon={{@faIcon}} />{{/if}}
+  {{#if @src}} <img src={{@src}} alt={{@alt}} />{{/if}}
+  {{@label}}</button>

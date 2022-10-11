@@ -41,10 +41,11 @@
             <label class='form-label' for='password'>Password</label>
           </div>
           <div class='text-center text-lg-start mt-4 pt-2'>
-            <button
-              type='submit'
-              class='btn btn-primary btn-lg button-login'
-            >Register new user</button>
+            <Shared::Button
+              class='btn-primary btn-lg button-login'
+              @label='Register new user'
+              @type='subtmit'
+            />
             <p class='small fw-bold mt-2 pt-1 mb-0'>Back to login page:
               <LinkTo @route='login'>Login page</LinkTo>
             </p>

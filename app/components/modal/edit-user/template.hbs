@@ -46,16 +46,16 @@
         </div>
       </div>
       <div class='modal-footer'>
-        <button
-          type='submit'
-          class='btn btn-danger'
-          {{on 'click' this.onCancel}}
-        >Cancel</button>
-        <button
-          type='button'
-          class='btn btn-success'
-          {{on 'click' this.onSaveChange}}
-        >Save change</button>
+        <Shared::Button
+          class='btn-danger'
+          @label='Cancel'
+          @onClick={{this.onCancel}}
+        />
+        <Shared::Button
+          class='btn-success'
+          @label='Save change'
+          @onClick={{this.onSaveChange}}
+        />
       </div>
     </div>
   </div>

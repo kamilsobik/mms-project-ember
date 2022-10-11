@@ -3,13 +3,13 @@
   <td>{{@user.email}}</td>
   <td>{{@user.password}}</td>
   <td>{{@user.userType}}</td>
-  <td align='center'><button
-      type='button'
+  <td align='center'>
+    <Shared::Button
       class='btn btn-success'
-      {{on 'click' this.onShowUserModal}}
-    >
-      <FaIcon @icon='user-pen' />
-    </button></td>
+      @faIcon='user-pen'
+      @onClick={{this.onShowUserModal}}
+    />
+  </td>
 </tr>
 
 {{#if this.isShowUserModal}}
