@@ -28,11 +28,8 @@
           />
         </div>
         <div class='mb-3'>
-          <label for='userTypeInput' class='form-label'>Edit user type:</label>
-          <div
-            class='form-floating mb-3'
-            {{on 'input' (fn this.onUserTypeChange 'userType')}}
-          >
+          <label for='userTypeInput' class='form-label'>Change user type:</label>
+          <div {{on 'input' (fn this.onUserTypeChange 'userType')}}>
             <select
               class='form-select'
               aria-label='Default select example'
