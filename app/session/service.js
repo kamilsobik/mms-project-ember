@@ -11,6 +11,12 @@ export default class SessionService extends Service {
   get isUserLoggedIn() {
     return Boolean(this.loggedAs.get('id'));
   }
+  get userLoggedInUsername() {
+    return Boolean.this.loggedAs.get('username');
+  }
+  get userLoggedInUserType() {
+    return Boolean.this.loggedAs.get('userType');
+  }
 
   async loginUser(login, password) {
     const users = await this.store.query('user', {
@@ -20,6 +26,8 @@ export default class SessionService extends Service {
     if (isUserExist) {
       const user = users.firstObject;
       this.loggedAs.set('id', user.id);
+      this.loggedAs.set('username', user.username);
+      this.loggedAs.set('userType', user.userType);
       window.location.href = '/';
     }
   }
@@ -52,6 +60,8 @@ export default class SessionService extends Service {
     }
 
     this.loggedAs.set('id', user.id);
+    this.loggedAs.set('username', user.username);
+    this.loggedAs.set('userType', user.userType);
     window.location.href = '/';
   }
 }
