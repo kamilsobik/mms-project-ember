@@ -8,13 +8,12 @@ export default class ModalEditUserComponent extends Component {
   }
 
   @action
-  onPasswordChange(event) {
-    this.args.user.password = event.target.value;
+  onPasswordChange({ target: { value } }) {
+    this.args.user.password = value;
   }
-
   @action
-  onEmailChange(event) {
-    this.args.user.email = event.target.value;
+  onEmailChange({ target: { value } }) {
+    this.args.user.email = value;
   }
 
   @action

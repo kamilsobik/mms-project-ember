@@ -14,14 +14,13 @@ export default class NavbarComponent extends Component {
   get isUserTypeIsRequestor() {
     return Boolean(
       this.session.currentUser.userType === 'requestor' ||
-        this.session.currentUser.userType === 'admin'
+        this.isUserTypeIsAdmin
     );
   }
-
   get isUserTypeIsResponder() {
     return Boolean(
       this.session.currentUser.userType === 'responder' ||
-        this.session.currentUser.userType === 'admin'
+        this.isUserTypeIsAdmin
     );
   }
 

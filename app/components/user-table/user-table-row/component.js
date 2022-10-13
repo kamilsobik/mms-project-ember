@@ -9,6 +9,7 @@ export default class UserTableUserTableRow extends Component {
   onShowUserModal() {
     this.isShowUserModal = true;
   }
+
   @action
   onHideUserModal() {
     this.isShowUserModal = false;

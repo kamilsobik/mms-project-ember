@@ -1,15 +1,10 @@
 import { helper } from '@ember/component/helper';
-
+const tableClass = {
+  requestor: 'table-success',
+  responder: 'table-warning',
+  admin: 'table-danger',
+};
 export function classUserTable([userType]) {
-  let newTableClass = 'table-primary';
-  if (userType === 'requestor') {
-    newTableClass = 'table-success';
-  } else if (userType === 'reqponder') {
-    newTableClass = 'table-warning';
-  } else if (userType === 'admin') {
-    newTableClass = 'table-danger';
-  }
-  return newTableClass;
+  return tableClass[userType] || 'table-primary';
 }
-
 export default helper(classUserTable);
