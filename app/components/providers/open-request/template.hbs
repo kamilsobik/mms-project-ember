@@ -49,8 +49,9 @@
   </div>
   <div class='d-grid gap-2'>
     <Shared::Button
-      class='btn-success btn-lg mt-5'
+      class='btn-success mt-5'
       @label='Create request'
+      @size='btn-lg'
       disabled={{this.hasEmptyField}}
       @onClick={{this.onCreatNewRequest}}
     />
