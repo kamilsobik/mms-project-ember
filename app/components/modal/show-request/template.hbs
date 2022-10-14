@@ -8,12 +8,12 @@
         <div class='mb-3'>
           <label for='downtimeInput' class='form-label'>Enter downtime (in
             minutes)*</label>
-          <input
-            type='number'
-            class='form-control'
-            id='downtimeInput'
-            value={{this.downtime}}
-            {{on 'input' this.onDowntimeChange}}
+          <Shared::Input
+            @type='number'
+            @id='downtimeInput'
+            @placeholder={{@user.password}}
+            @value={{this.downtime}}
+            @onChange={{this.onDowntimeChange}}
           />
         </div>
         <div class='mb-3'>
