@@ -11,20 +11,18 @@ export default class NavbarComponent extends Component {
     return this.loggedAs.get('username');
   }
 
-  get isUserTypeIsRequestor() {
+  get isRequestorUserType() {
     return Boolean(
-      this.session.currentUser.userType === 'requestor' ||
-        this.isUserTypeIsAdmin
+      this.session.currentUser.userType === 'requestor' || this.isAdminUserType
     );
   }
-  get isUserTypeIsResponder() {
+  get isResponderUserType() {
     return Boolean(
-      this.session.currentUser.userType === 'responder' ||
-        this.isUserTypeIsAdmin
+      this.session.currentUser.userType === 'responder' || this.isAdminUserType
     );
   }
 
-  get isUserTypeIsAdmin() {
+  get isAdminUserType() {
     return Boolean(this.session.currentUser.userType === 'admin');
   }
 

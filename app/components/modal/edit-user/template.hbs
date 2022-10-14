@@ -8,10 +8,10 @@
         <div class='mb-3'>
           <label for='emailUserInput' class='form-label'>Enter new email</label>
           <input
-            type='e-mail'
+            type='email'
             class='form-control'
             id='editEmailInput'
-            placeholder='{{@user.email}}'
+            placeholder={{@user.email}}
             value={{this.email}}
             {{on 'input' this.onEmailChange}}
           />
@@ -22,14 +22,16 @@
             type='password'
             class='form-control'
             id='editPasswordInput'
-            placeholder='{{@user.password}}'
+            placeholder={{@user.password}}
             value={{this.password}}
             {{on 'input' this.onPasswordChange}}
           />
         </div>
         <div class='mb-3'>
           <label for='userTypeInput' class='form-label'>Change user type:</label>
-          <div {{on 'input' (fn this.onUserTypeChange 'userType')}}>
+          <div
+            {{on 'input' (fn this.onUserTypeChange 'userType') role='button'}}
+          >
             <select
               class='form-select'
               aria-label='Default select example'
