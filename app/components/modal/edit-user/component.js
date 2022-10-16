@@ -1,10 +1,13 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { userType } from 'mms-ember-project/utils/form-data';
 
 export default class ModalEditUserComponent extends Component {
+  userType = userType;
+
   @action
-  onUserTypeChange(property, { target: { value } }) {
-    this.args.user[property] = value;
+  onUserTypeChange(value) {
+    this.args.user.userType = value;
   }
 
   @action

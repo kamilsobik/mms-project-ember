@@ -27,19 +27,14 @@
         </div>
         <div class='mb-3'>
           <label for='userTypeInput' class='form-label'>Change user type:</label>
-          <div
-            {{on 'input' (fn this.onUserTypeChange 'userType') role='button'}}
+          <PowerSelect
+            @selected={{@user.userType}}
+            @options={{this.userType}}
+            @onChange={{this.onUserTypeChange}}
+            as |value|
           >
-            <select
-              class='form-select'
-              aria-label='Default select example'
-              value={{@user.userType}}
-            >
-              <option value='requestor'>Requestor</option>
-              <option value='responder'>Responder</option>
-              <option value='admin'>Admin</option>
-            </select>
-          </div>
+            {{value}}
+          </PowerSelect>
         </div>
       </div>
       <div class='modal-footer'>
