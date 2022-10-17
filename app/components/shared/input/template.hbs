@@ -1,8 +1,9 @@
 <input
   type={{this.chceckInputType}}
-  class='form-control {{@class}} {{this.size}}'
+  class='form-control {{this.size}}'
   id={{@id}}
   placeholder='{{@placeholder}}'
   value={{@vale}}
   {{on 'input' @onChange}}
+  ...attributes
 />

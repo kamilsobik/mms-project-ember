@@ -1,3 +1,3 @@
-const userType = ['admin', 'responder', 'requestor'];
+const userTypes = ['admin', 'responder', 'requestor'];
 
-export { userType };
+export { userTypes };

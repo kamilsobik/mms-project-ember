@@ -11,7 +11,6 @@
             @type='email'
             @id='editEmailInput'
             @placeholder={{@user.email}}
-            @value={{this.email}}
             @onChange={{this.onEmailChange}}
           />
         </div>
@@ -21,7 +20,6 @@
             @type='password'
             @id='editPasswordInput'
             @placeholder={{@user.password}}
-            @value={{this.password}}
             @onChange={{this.onPasswordChange}}
           />
         </div>
@@ -29,7 +27,7 @@
           <label for='userTypeInput' class='form-label'>Change user type:</label>
           <PowerSelect
             @selected={{@user.userType}}
-            @options={{this.userType}}
+            @options={{this.userTypes}}
             @onChange={{this.onUserTypeChange}}
             as |value|
           >
