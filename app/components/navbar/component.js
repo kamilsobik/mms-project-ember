@@ -16,6 +16,7 @@ export default class NavbarComponent extends Component {
       this.session.currentUser.userType === 'requestor' || this.isAdminUserType
     );
   }
+
   get isResponderUserType() {
     return Boolean(
       this.session.currentUser.userType === 'responder' || this.isAdminUserType

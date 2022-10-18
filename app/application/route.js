@@ -54,6 +54,7 @@ export default class ApplicationRoute extends Route {
       status: 'closed',
       solution: 'Replace sensor A32.4',
     };
+
     const request2 = {
       id: 2,
       type: '2.0 fault',
@@ -65,6 +66,7 @@ export default class ApplicationRoute extends Route {
       status: 'closed',
       solution: 'Checking program PLC',
     };
+
     const request3 = {
       id: 3,
       type: '1.0 tpm',
