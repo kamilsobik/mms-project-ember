@@ -2,28 +2,20 @@
 <div class='container'>
   <div class='row'>
     <div class='col mb-5'>
-      <PowerSelect
-        @triggerClass='form-control'
+      <Shared::PowerSelect
         @selected={{this.record.type}}
         @options={{this.requestTypes}}
         @onChange={{fn this.onTypeSelectionChange 'type'}}
         @placeholder={{'Select request type'}}
-        as |value|
-      >
-        {{value}}
-      </PowerSelect>
+      />
     </div>
     <div class='col mb-5'>
-      <PowerSelect
-        @triggerClass='form-control'
+      <Shared::PowerSelect
         @selected={{this.record.machine}}
         @options={{this.machines}}
         @onChange={{fn this.onSelectionChange 'machine'}}
         @placeholder={{'Select machine'}}
-        as |value|
-      >
-        {{value}}
-      </PowerSelect>
+      />
     </div>
   </div>
   <div class='form-floating'>

@@ -25,15 +25,11 @@
         </div>
         <div class='mb-3'>
           <label for='userTypeInput' class='form-label'>Change user type:</label>
-          <PowerSelect
-            @triggerClass='form-control'
+          <Shared::PowerSelect
             @selected={{@user.userType}}
             @options={{this.userTypes}}
             @onChange={{this.onUserTypeChange}}
-            as |value|
-          >
-            {{value}}
-          </PowerSelect>
+          />
         </div>
       </div>
       <div class='modal-footer'>
