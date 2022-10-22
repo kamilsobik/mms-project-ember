@@ -26,6 +26,7 @@
         <div class='mb-3'>
           <label for='userTypeInput' class='form-label'>Change user type:</label>
           <PowerSelect
+            @triggerClass='form-control'
             @selected={{@user.userType}}
             @options={{this.userTypes}}
             @onChange={{this.onUserTypeChange}}

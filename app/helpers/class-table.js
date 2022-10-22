@@ -7,7 +7,7 @@ const tableClasses = [
 
 export function classTable([typeRequest]) {
   return (
-    tableClasses.find(({ value }) => value === typeRequest).class ||
+    tableClasses.find(({ value }) => value === typeRequest)?.class ||
     'table-primary'
   );
 }

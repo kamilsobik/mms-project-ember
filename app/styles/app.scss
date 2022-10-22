@@ -1,5 +1,42 @@
 @import '_index';
 @import 'bootstrap';
+@import 'ember-power-select/themes/material';
 @import 'ember-power-select';
 @import 'ember-modal-dialog/ember-modal-structure';
 @import 'ember-modal-dialog/ember-modal-appearance';
+
+.form-control.ember-power-select-trigger {
+  height: inherit;
+  min-height: 58px;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  &.form-control-sm {
+    min-height: 30px;
+  }
+
+  &.ember-power-select-multiple-trigger {
+    align-items: center;
+    display: flex;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    .ember-power-select-multiple-options {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+$ember-power-select-dropdown-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+.ember-power-select-placeholder {
+  transition: transform 0.2s, color 0.2s;
+  transform-origin: 0 0;
+  color: #212529;
+
+  .ember-power-select-trigger--active & {
+    transform: scale(0.85) translateY(-10px);
+    color: rgb(170, 170, 170);
+  }
+}

@@ -1,59 +1,47 @@
 <Header>Open new request</Header>
 <div class='container'>
   <div class='row'>
-    <div class='col'>
-      <div
-        class='form-floating mb-3'
-        {{on 'input' (fn this.onPropertyChange 'type')}}
+    <div class='col mb-5'>
+      <PowerSelect
+        @triggerClass='form-control'
+        @selected={{this.record.type}}
+        @options={{this.requestTypes}}
+        @onChange={{fn this.onTypeSelectionChange 'type'}}
+        @placeholder={{'Select request type'}}
+        as |value|
       >
-        <select
-          class='form-select'
-          aria-label='Default select example'
-          value={{this.type}}
-        >
-          <option selected>Select request type</option>
-          <option value='1.0 tpm'>1.0 TPM</option>
-          <option value='2.0 fault'>2.0 Fault</option>
-          <option value='3.0 breakdown'>3.0 Breakdown</option>
-        </select>
-      </div>
+        {{value}}
+      </PowerSelect>
     </div>
-    <div class='col'>
-      <div
-        class='form-floating mb-3'
-        {{on 'input' (fn this.onPropertyChange 'machine')}}
+    <div class='col mb-5'>
+      <PowerSelect
+        @triggerClass='form-control'
+        @selected={{this.record.machine}}
+        @options={{this.machines}}
+        @onChange={{fn this.onSelectionChange 'machine'}}
+        @placeholder={{'Select machine'}}
+        as |value|
       >
-        <select
-          class='form-select'
-          aria-label='Default select example'
-          value={{this.machine}}
-        >
-          <option selected>Select machine</option>
-          <option value='Machine 1'>Machine 1</option>
-          <option value='Machine 2'>Machine 2</option>
-          <option value='Machine 3'>Machine 3</option>
-        </select>
-      </div>
+        {{value}}
+      </PowerSelect>
     </div>
   </div>
   <div class='form-floating'>
-    <input
-      type='text'
-      class='form-control'
-      id='floatingtext'
-      placeholder='text'
-      value={{this.title}}
-      {{on 'input' (fn this.onPropertyChange 'title')}}
+    <Shared::Input
+      @type='text'
+      @id='inputTitleRequest'
+      @placeholder='Explain problem'
+      @onChange={{fn this.onPropertyChange 'title'}}
     />
     <label for='floatingPassword'>Explain problem</label>
   </div>
   <div class='d-grid gap-2'>
     <Shared::Button
       class='mt-5'
+      disabled={{this.hasEmptyField}}
       @variant='success'
       @label='Create request'
       @size='lg'
-      disabled={{this.hasEmptyField}}
       @onClick={{this.onCreatNewRequest}}
     />
   </div>
