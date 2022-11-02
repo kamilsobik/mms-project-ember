@@ -1,28 +1,31 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { Changeset } from 'ember-changeset';
 import { userTypes } from 'mms-ember-project/utils/form-data';
 
 export default class ModalEditUserComponent extends Component {
   userTypes = userTypes;
 
+  changeset = Changeset(this.args.user);
+
   @action
   onUserTypeChange(value) {
-    this.args.user.userType = value;
+    this.changeset.userType = value;
   }
 
   @action
   onPasswordChange({ target: { value } }) {
-    this.args.user.password = value;
+    this.changeset.password = value;
   }
 
   @action
   onEmailChange({ target: { value } }) {
-    this.args.user.email = value;
+    this.changeset.email = value;
   }
 
   @action
   async onSaveChange() {
-    await this.args.user.save();
+    await this.changeset.save();
     this.args.onClose();
   }
 
@@ -34,7 +37,7 @@ export default class ModalEditUserComponent extends Component {
 
   @action
   onCancel() {
-    this.args.user.rollbackAttributes();
+    this.changeset.rollbackAttributes();
     this.args.onClose();
   }
 }
