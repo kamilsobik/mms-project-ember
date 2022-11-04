@@ -26,7 +26,7 @@
         <div class='mb-3'>
           <label for='userTypeInput' class='form-label'>Change user type:</label>
           <Shared::PowerSelect
-            @selected={{@user.userType}}
+            @selected={{this.changeset.userType}}
             @options={{this.userTypes}}
             @onChange={{this.onUserTypeChange}}
           />
