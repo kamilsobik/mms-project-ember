@@ -29,7 +29,10 @@
             @selected={{this.changeset.userType}}
             @options={{this.userTypes}}
             @onChange={{this.onUserTypeChange}}
-          />
+            as |value|
+          >
+            {{value}}
+          </Shared::PowerSelect>
         </div>
       </div>
       <div class='modal-footer'>

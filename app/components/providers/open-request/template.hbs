@@ -3,26 +3,32 @@
   <div class='row'>
     <div class='col mb-5'>
       <Shared::PowerSelect
+        @placeholder={{'Select request type'}}
         @selected={{this.record.type}}
         @options={{this.requestTypes}}
         @onChange={{fn this.onTypeSelectionChange 'type'}}
-        @placeholder={{'Select request type'}}
-      />
+        as |value|
+      >
+        {{value}}
+      </Shared::PowerSelect>
     </div>
     <div class='col mb-5'>
       <Shared::PowerSelect
+        @placeholder={{'Select machine'}}
         @selected={{this.record.machine}}
         @options={{this.machines}}
         @onChange={{fn this.onSelectionChange 'machine'}}
-        @placeholder={{'Select machine'}}
-      />
+        as |value|
+      >
+        {{value}}
+      </Shared::PowerSelect>
     </div>
   </div>
   <div class='form-floating'>
     <Shared::Input
+      @placeholder='Explain problem'
       @type='text'
       @id='inputTitleRequest'
-      @placeholder='Explain problem'
       @onChange={{fn this.onPropertyChange 'title'}}
     />
     <label for='floatingPassword'>Explain problem</label>
@@ -30,10 +36,10 @@
   <div class='d-grid gap-2'>
     <Shared::Button
       class='mt-5'
-      disabled={{this.hasEmptyField}}
       @variant='success'
       @label='Create request'
       @size='lg'
+      disabled={{this.hasEmptyField}}
       @onClick={{this.onCreatNewRequest}}
     />
   </div>

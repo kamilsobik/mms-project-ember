@@ -9,9 +9,9 @@
           <label for='downtimeInput' class='form-label'>Enter downtime (in
             minutes)*</label>
           <Shared::Input
+            @placeholder={{@user.password}}
             @type='number'
             @id='downtimeInput'
-            @placeholder={{@user.password}}
             @value={{this.downtime}}
             @onChange={{this.onDowntimeChange}}
           />

@@ -14,19 +14,19 @@
         <form {{on 'submit' this.onSubmit}}>
           <div class='form-outline mb-4'>
             <Shared::Input
+              @placeholder='Enter your login'
               @id='login-input'
               @size='lg'
-              @placeholder='Enter your login'
               @onChange={{this.onLoginChange}}
             />
             <label class='form-label' for='login'>Login</label>
           </div>
           <div class='form-outline mb-3'>
             <Shared::Input
+              @placeholder='Enter password'
               @type='password'
               @id='password-input'
               @size='lg'
-              @placeholder='Enter password'
               @onChange={{this.this.onPasswordChange}}
             />
             <label class='form-label' for='password'>Password</label>
@@ -41,9 +41,9 @@
             />
             <Shared::Button
               @type='submit'
-              @onClick={{this.on0AuthLoginOrRegister}}
               @src='/assets/images/btn_google_signin_light_focus_web.png'
               @alt='login with google'
+              @onClick={{this.on0AuthLoginOrRegister}}
             />
             <p class='small fw-bold mt-2 pt-1 mb-0'>Don't have an account?
               <LinkTo @route='register'>Register new user</LinkTo>

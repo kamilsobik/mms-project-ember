@@ -14,5 +14,5 @@
 </tr>
 
 {{#if this.isShowUserModal}}
-  <Modal::EditUser @onClose={{this.onHideUserModal}} @user={{@user}} />
+  <Modal::EditUser @user={{@user}} @onClose={{this.onHideUserModal}} />
 {{/if}}
