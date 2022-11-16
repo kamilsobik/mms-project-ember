@@ -16,6 +16,15 @@ export default class SharedInputComponenet extends Component {
     return isCorrectSize ? `form-control-${size}` : '';
   }
 
+  get inputClasses() {
+    const classes = ['form-control'];
+    const { size } = this;
+    if (size) {
+      classes.push(size);
+    }
+    return classes.join(' ');
+  }
+
   @action
   onClick() {
     this.args.onClick?.(...arguments);

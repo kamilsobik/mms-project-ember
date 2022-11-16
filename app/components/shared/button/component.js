@@ -28,6 +28,18 @@ export default class SharedButtonComponenet extends Component {
     return isCorrectVariant ? `btn-${variant}` : '';
   }
 
+  get buttonClasses() {
+    const classes = ['btn'];
+    const { size, variant } = this;
+    if (size) {
+      classes.push(size);
+    }
+    if (variant) {
+      classes.push(variant);
+    }
+    return classes.join(' ');
+  }
+
   @action
   onClick() {
     this.args.onClick?.(...arguments);
