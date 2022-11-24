@@ -32,20 +32,7 @@ export default class KpiMainKpiChartComponent extends Component {
           label: 'Downtime [h]',
         },
       ],
-      labels: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
+      labels: this.args.tableOfMonths,
     };
     return data;
   }

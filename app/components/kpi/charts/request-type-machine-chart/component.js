@@ -3,18 +3,11 @@ import Component from '@glimmer/component';
 export default class RequestTypeMachineComponent extends Component {
   get chartData() {
     const data = {
-      labels: [
-        'Machine 1',
-        'Machine 2',
-        'Machine 3',
-        'Machine 4',
-        'Machine 5',
-        'Machine 6',
-      ],
+      labels: this.args.machinesName,
       datasets: [
         {
           label: 'Breakdown',
-          data: [3, 3, 2, 2, 3, 3],
+          data: this.args.numberOfRequestByTypeBreakdown,
           fill: true,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgb(255, 99, 132)',
@@ -23,7 +16,7 @@ export default class RequestTypeMachineComponent extends Component {
         },
         {
           label: 'Fault',
-          data: [2, 4, 5, 3, 4, 5],
+          data: this.args.numberOfRequestByTypeFault,
           fill: true,
           backgroundColor: 'rgba(255, 205, 86, 0.2)',
           borderColor: 'rgb(255, 205, 86)',
@@ -32,7 +25,7 @@ export default class RequestTypeMachineComponent extends Component {
         },
         {
           label: 'TPM',
-          data: [4, 5, 3, 7, 6, 4],
+          data: this.args.numberOfRequestByTypeTPM,
           fill: true,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgb(75, 192, 192)',
