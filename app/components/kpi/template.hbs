@@ -1,4 +1,6 @@
-<div>{{this.numberOfRequestsByType}}</div>
+<div>{{this.numberOfBreakdowns}}</div>
+<div>{{this.availibleHoursInMonths}}</div>
+<div>{{this.mtbf}}</div>
 
 <div class='container'>
   <div class='ps-5 pe-5 mb-5'>
@@ -15,9 +17,9 @@
   <div class='ps-5 pe-5 mb-5'>
     <Kpi::Charts::RequestTypeMachineChart
       @machinesName={{this.machinesName}}
-      @numberOfRequestByTypeTPM='{{this.numberOfRequestByTypeTPM}}'
-      @numberOfRequestByTypeFault='{{this.numberOfRequestByTypeFault}}'
-      @numberOfRequestByTypeBreakdown='{{this.numberOfRequestByTypeBreakdown}}'
+      @numberOfRequestByTypeTPM={{this.numberOfRequestByTypeTPM}}
+      @numberOfRequestByTypeFault={{this.numberOfRequestByTypeFault}}
+      @numberOfRequestByTypeBreakdown={{this.numberOfRequestByTypeBreakdown}}
     />
   </div>
 </div>
