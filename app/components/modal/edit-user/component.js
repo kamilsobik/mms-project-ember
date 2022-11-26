@@ -17,12 +17,12 @@ export default class ModalEditUserComponent extends Component {
   }
 
   @action
-  onPasswordChange({ target: { value } }) {
+  onPasswordChange(value) {
     this.changeset.password = value;
   }
 
   @action
-  onEmailChange({ target: { value } }) {
+  onEmailChange(value) {
     this.changeset.email = value;
   }
 

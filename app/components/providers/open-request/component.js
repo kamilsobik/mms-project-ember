@@ -33,8 +33,8 @@ export default class ProvidersOpenRequestComponent extends Component {
   }
 
   @action
-  onPropertyChange(key, event) {
-    this.record[key] = event.target.value;
+  onPropertyChange(key, value) {
+    this.record[key] = value;
   }
 
   @action

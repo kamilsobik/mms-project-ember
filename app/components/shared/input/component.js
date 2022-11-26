@@ -29,4 +29,10 @@ export default class SharedInputComponenet extends Component {
   onClick() {
     this.args.onClick?.(...arguments);
   }
+
+  @action
+  onChange(event) {
+    const { value } = event.target;
+    this.args.onChange?.(value, event);
+  }
 }

@@ -17,6 +17,7 @@
               @placeholder='Enter your login'
               @id='login-input'
               @size='lg'
+              @value={{this.value}}
               @onChange={{this.onLoginChange}}
             />
             <label class='form-label' for='login'>Login</label>
@@ -27,6 +28,7 @@
               @type='password'
               @id='password-input'
               @size='lg'
+              @value={{this.value}}
               @onChange={{this.this.onPasswordChange}}
             />
             <label class='form-label' for='password'>Password</label>

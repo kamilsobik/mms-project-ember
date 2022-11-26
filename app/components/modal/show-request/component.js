@@ -8,8 +8,8 @@ export default class ModalShowRequestComponent extends Component {
   }
 
   @action
-  onDowntimeChange(event) {
-    this.args.request.downtime = event.target.value;
+  onDowntimeChange(value) {
+    this.args.request.downtime = value;
   }
 
   @action
