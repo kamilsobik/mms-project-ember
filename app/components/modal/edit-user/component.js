@@ -6,7 +6,10 @@ import { userTypes } from 'mms-ember-project/utils/form-data';
 export default class ModalEditUserComponent extends Component {
   userTypes = userTypes;
 
-  changeset = Changeset(this.args.user);
+  constructor(owner, args) {
+    super(owner, args);
+    this.changeset = Changeset(this.args.user);
+  }
 
   @action
   onUserTypeChange(value) {
