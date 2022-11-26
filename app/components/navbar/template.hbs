@@ -19,15 +19,21 @@
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.requests'>Requests</LinkTo>
         </li>
-        <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.open-request'>Open new request</LinkTo>
-        </li>
-        <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.close-request'>Close request</LinkTo>
-        </li>
-        <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.users'>Users</LinkTo>
-        </li>
+        {{#if this.isRequestorUserType}}
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='home.open-request'>Open new request</LinkTo>
+          </li>
+        {{/if}}
+        {{#if this.isResponderUserType}}
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='home.close-request'>Close request</LinkTo>
+          </li>
+        {{/if}}
+        {{#if this.isAdminUserType}}
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='home.users'>Users</LinkTo>
+          </li>
+        {{/if}}
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.kpi'>KPI</LinkTo>
         </li>
@@ -44,6 +50,12 @@
             {{on 'click' this.onLogout}}
           >Logout</span>
         </li>
+        <div class='nav-item'>
+          <li class='nav-link'>
+            Login user:
+            {{this.session.currentUser.username}}
+          </li>
+        </div>
       </ul>
     </div>
   </div>

@@ -16,8 +16,7 @@ export default class ApplicationRoute extends Route {
       username: 'admin',
       password: 'admin123',
       email: 'admin@gmail.com',
-      isRequestor: true,
-      isAdmin: true,
+      userType: 'admin',
     };
 
     const user2 = {
@@ -25,8 +24,7 @@ export default class ApplicationRoute extends Route {
       username: 'requestor',
       password: 'requestor123',
       email: 'requestor@gmail.com',
-      isRequestor: true,
-      isAdmin: false,
+      userType: 'requestor',
     };
 
     const user3 = {
@@ -34,8 +32,7 @@ export default class ApplicationRoute extends Route {
       username: 'responder',
       password: 'responder123',
       email: 'responder@gmail.com',
-      isRequestor: false,
-      isAdmin: false,
+      userType: 'responder',
     };
 
     const user1Model = this.store.createRecord('user', user1);

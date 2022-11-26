@@ -1,15 +1,15 @@
 import { helper } from '@ember/component/helper';
+const tableClasses = [
+  { value: '1.0 tpm', class: 'table-success' },
+  { value: '2.0 fault', class: 'table-warning' },
+  { value: '3.0 breakdown', class: 'table-danger' },
+];
 
 export function classTable([typeRequest]) {
-  let newTableClass = 'table-primary';
-  if (typeRequest === '1.0 tpm') {
-    newTableClass = 'table-success';
-  } else if (typeRequest === '2.0 fault') {
-    newTableClass = 'table-warning';
-  } else if (typeRequest === '3.0 breakdown') {
-    newTableClass = 'table-danger';
-  }
-  return newTableClass;
+  return (
+    tableClasses.find(({ value }) => value === typeRequest)?.class ||
+    'table-primary'
+  );
 }
 
 export default helper(classTable);

@@ -1,0 +1,59 @@
+<ModalDialog>
+  <div class='modal-dialog modal-xl'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title'>Edit user: {{@user.username}}</h5>
+      </div>
+      <div class='modal-body'>
+        <div class='mb-3'>
+          <label for='emailUserInput' class='form-label'>Enter new email</label>
+          <Shared::Input
+            @type='email'
+            @id='editEmailInput'
+            @placeholder={{@user.email}}
+            @value={{this.value}}
+            @onChange={{this.onEmailChange}}
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='passwordUserInput' class='form-label'>Enter new password</label>
+          <Shared::Input
+            @type='password'
+            @id='editPasswordInput'
+            @placeholder={{@user.password}}
+            @value={{this.value}}
+            @onChange={{this.onPasswordChange}}
+          />
+        </div>
+        <div class='mb-3'>
+          <label for='userTypeInput' class='form-label'>Change user type:</label>
+          <Shared::PowerSelect
+            @selected={{this.changeset.userType}}
+            @options={{this.userTypes}}
+            @onChange={{this.onUserTypeChange}}
+            as |value|
+          >
+            {{value}}
+          </Shared::PowerSelect>
+        </div>
+      </div>
+      <div class='modal-footer'>
+        <Shared::Button
+          @variant='dark'
+          @label='Delete user'
+          @onClick={{this.onDeleteUser}}
+        />
+        <Shared::Button
+          @variant='danger'
+          @label='Cancel'
+          @onClick={{this.onCancel}}
+        />
+        <Shared::Button
+          @variant='success'
+          @label='Save change'
+          @onClick={{this.onSaveChange}}
+        />
+      </div>
+    </div>
+  </div>
+</ModalDialog>

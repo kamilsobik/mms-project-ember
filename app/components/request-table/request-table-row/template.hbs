@@ -7,8 +7,9 @@
   <td>{{moment-format @request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
   <td align='center'>
     <Shared::Button
-      class='btn btn-danger'
-      @label='close'
+      class='btn'
+      @variant='danger'
+      @faIcon='check'
       @onClick={{this.onShowModal}}
     />
   </td>

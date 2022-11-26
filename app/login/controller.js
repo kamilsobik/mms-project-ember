@@ -15,13 +15,13 @@ export default class LoginController extends Controller {
   @service session;
 
   @action
-  onLoginChange(event) {
-    this.loginValue = event.target.value;
+  onLoginChange(value) {
+    this.loginValue = value;
   }
 
   @action
-  onPasswordChange(event) {
-    this.passwordValue = event.target.value;
+  onPasswordChange(value) {
+    this.passwordValue = value;
   }
 
   @action

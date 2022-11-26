@@ -4,7 +4,6 @@ export default class UserModel extends Model {
   @attr('string') username;
   @attr('string') password;
   @attr('string') email;
-  @attr('boolean', { defaultValue: false }) isRequestor;
-  @attr('boolean', { defaultValue: false }) isAdmin;
+  @attr('string', { defaultValue: 'requestor' }) userType;
   @hasMany('request') requests;
 }

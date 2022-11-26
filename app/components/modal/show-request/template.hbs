@@ -8,12 +8,12 @@
         <div class='mb-3'>
           <label for='downtimeInput' class='form-label'>Enter downtime (in
             minutes)*</label>
-          <input
-            type='number'
-            class='form-control'
-            id='downtimeInput'
-            value={{this.downtime}}
-            {{on 'input' this.onDowntimeChange}}
+          <Shared::Input
+            @placeholder={{@user.password}}
+            @type='number'
+            @id='downtimeInput'
+            @value={{this.downtime}}
+            @onChange={{this.onDowntimeChange}}
           />
         </div>
         <div class='mb-3'>
@@ -22,7 +22,7 @@
             class='form-control'
             id='requestSolution'
             rows='3'
-            value={{this.solution}}
+            value={{this.value}}
             {{on 'input' this.onSolutionChange}}
           ></textarea>
         </div>
@@ -30,12 +30,12 @@
       </div>
       <div class='modal-footer'>
         <Shared::Button
-          class='btn btn-danger'
+          @variant='danger'
           @label='Cancel'
           @onClick={{this.onCancel}}
         />
         <Shared::Button
-          class='btn btn-success'
+          @variant='success'
           @label='Close request'
           @onClick={{this.onSaveChange}}
         />

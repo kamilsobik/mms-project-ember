@@ -1,11 +1,15 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
+import { machines, requestTypes } from 'mms-ember-project/utils/form-data';
 
 export default class ProvidersOpenRequestComponent extends Component {
   @service store;
   @service session;
   @service router;
+
+  machines = machines;
+  requestTypes = requestTypes;
 
   constructor() {
     super(...arguments);
@@ -19,8 +23,18 @@ export default class ProvidersOpenRequestComponent extends Component {
   }
 
   @action
-  onPropertyChange(key, event) {
-    this.record[key] = event.target.value;
+  onSelectionChange(key, machine) {
+    this.record[key] = machine;
+  }
+
+  @action
+  onTypeSelectionChange(key, type) {
+    this.record[key] = type;
+  }
+
+  @action
+  onPropertyChange(key, value) {
+    this.record[key] = value;
   }
 
   @action
