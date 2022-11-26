@@ -27,44 +27,47 @@ export default class KpiComponent extends Component {
 
   @action
   tableOfMonthsWithRequests(requestType) {
-    return this.tableOfMonths.map((month, index) => {
-      return this.allClosedRequests
-        .filter(({ createdAt }) => createdAt.getMonth() === index)
-        .filter(({ type }) => type === requestType).length;
-    });
+    return this.tableOfMonths.map(
+      (month, index) =>
+        this.allClosedRequests
+          .filter(({ createdAt }) => createdAt.getMonth() === index)
+          .filter(({ type }) => type === requestType).length
+    );
   }
 
   @action numberOfRequestByType(requestType) {
-    return this.machinesName.map((machineName) => {
-      return this.allClosedRequests
-        .filter(({ type }) => type === requestType)
-        .filter(({ machine }) => machine === machineName).length;
-    });
+    return this.machinesName.map(
+      (machineName) =>
+        this.allClosedRequests
+          .filter(({ type }) => type === requestType)
+          .filter(({ machine }) => machine === machineName).length
+    );
   }
 
   get allBreakdowns() {
-    return this.tableOfMonths.map((month, index) => {
-      return this.allClosedRequests.filter(
+    return this.tableOfMonths.map((month, index) =>
+      this.allClosedRequests.filter(
         ({ createdAt }) => createdAt.getMonth() === index
-      );
-    });
+      )
+    );
   }
 
   get numberOfBreakdowns() {
-    return this.tableOfMonths.map((month, index) => {
-      return this.allClosedRequests
-        .filter(({ createdAt }) => createdAt.getMonth() === index)
-        .filter(({ type }) => type === '3.0 breakdown').length;
-    });
+    return this.tableOfMonths.map(
+      (month, index) =>
+        this.allClosedRequests
+          .filter(({ createdAt }) => createdAt.getMonth() === index)
+          .filter(({ type }) => type === '3.0 breakdown').length
+    );
   }
 
   get numberTimeOfBreakdowns() {
     return this.tableOfMonths
-      .map((month, index) => {
-        return this.allClosedRequests
+      .map((month, index) =>
+        this.allClosedRequests
           .filter(({ createdAt }) => createdAt.getMonth() === index)
-          .filter(({ type }) => type === '3.0 breakdown');
-      })
+          .filter(({ type }) => type === '3.0 breakdown')
+      )
       .map((month) => month.reduce((acc, { downtime }) => acc + downtime, 0));
   }
 
