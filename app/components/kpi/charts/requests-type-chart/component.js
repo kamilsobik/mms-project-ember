@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 export default class RequestTypeComponent extends Component {
   get chartData() {
     const data = {
+      labels: this.args.tableOfMonths,
       datasets: [
         {
           label: 'TPM',
@@ -29,24 +30,12 @@ export default class RequestTypeComponent extends Component {
           data: this.args.tableOfMonthsWithRequests('3.0 breakdown'),
         },
       ],
-      labels: this.args.tableOfMonths,
     };
     return data;
   }
 
   get chartOptions() {
-    const options = {
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              min: 0,
-              max: 7,
-            },
-          },
-        ],
-      },
-    };
+    const options = {};
     return options;
   }
 }

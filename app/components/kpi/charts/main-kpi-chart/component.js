@@ -3,6 +3,7 @@ import Component from '@glimmer/component';
 export default class KpiMainKpiChartComponent extends Component {
   get chartData() {
     const data = {
+      labels: this.args.tableOfMonths,
       datasets: [
         {
           data: this.args.mtbf,
@@ -32,24 +33,12 @@ export default class KpiMainKpiChartComponent extends Component {
           label: 'Downtime [h]',
         },
       ],
-      labels: this.args.tableOfMonths,
     };
     return data;
   }
 
   get chartOptions() {
-    const options = {
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              offsetGridLines: false,
-            },
-          },
-        ],
-      },
-    };
-
+    const options = {};
     return options;
   }
 }

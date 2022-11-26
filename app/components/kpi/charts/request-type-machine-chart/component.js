@@ -43,13 +43,8 @@ export default class RequestTypeMachineComponent extends Component {
         angleLines: {
           display: false,
         },
-        ticks: {
-          suggestedMin: 0,
-          suggestedMax: 6,
-        },
       },
     };
-
     return options;
   }
 }

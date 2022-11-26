@@ -8,10 +8,9 @@ export default class KpiComponent extends Component {
   @service session;
 
   get tableOfMonths() {
-    const arrayOfMonths = Array.from({ length: 12 }, (_, index) =>
+    return Array.from({ length: 12 }, (_, index) =>
       format(new Date(2022, index), 'MMMM')
     );
-    return arrayOfMonths;
   }
 
   get allClosedRequests() {
@@ -19,61 +18,43 @@ export default class KpiComponent extends Component {
   }
 
   get requestTypes() {
-    return [
-      ...new Set(
-        this.args.model.map((request) => {
-          return request.type;
-        })
-      ),
-    ];
+    return [...new Set(this.args.model.map(({ type }) => type))];
   }
 
   get machinesName() {
-    return [
-      ...new Set(
-        this.args.model.map((request) => {
-          return request.machine;
-        })
-      ),
-    ];
+    return [...new Set(this.args.model.map(({ machine }) => machine))];
   }
 
   @action
   tableOfMonthsWithRequests(requestType) {
     return this.tableOfMonths.map((month, index) => {
       return this.allClosedRequests
-        .filter(({ createdAt }) => {
-          let requestMonth = createdAt.getMonth();
-          return requestMonth === index;
-        })
-        .filter(({ type }) => {
-          return type === requestType;
-        }).length;
+        .filter(({ createdAt }) => createdAt.getMonth() === index)
+        .filter(({ type }) => type === requestType).length;
     });
   }
 
   @action numberOfRequestByType(requestType) {
-    return this.machinesName.map((machine) => {
+    return this.machinesName.map((machineName) => {
       return this.allClosedRequests
-        .filter((request) => {
-          return request.type === requestType;
-        })
-        .filter((request) => {
-          return request.machine === machine;
-        }).length;
+        .filter(({ type }) => type === requestType)
+        .filter(({ machine }) => machine === machineName).length;
+    });
+  }
+
+  get allBreakdowns() {
+    return this.tableOfMonths.map((month, index) => {
+      return this.allClosedRequests.filter(
+        ({ createdAt }) => createdAt.getMonth() === index
+      );
     });
   }
 
   get numberOfBreakdowns() {
     return this.tableOfMonths.map((month, index) => {
       return this.allClosedRequests
-        .filter((request) => {
-          let requestMonth = request.createdAt.getMonth();
-          return requestMonth === index;
-        })
-        .filter((request) => {
-          return request.type === '3.0 breakdown';
-        }).length;
+        .filter(({ createdAt }) => createdAt.getMonth() === index)
+        .filter(({ type }) => type === '3.0 breakdown').length;
     });
   }
 
@@ -81,40 +62,29 @@ export default class KpiComponent extends Component {
     return this.tableOfMonths
       .map((month, index) => {
         return this.allClosedRequests
-          .filter(({ createdAt }) => {
-            let requestMonth = createdAt.getMonth();
-            return requestMonth === index;
-          })
-          .filter(({ type }) => {
-            return type === '3.0 breakdown';
-          });
+          .filter(({ createdAt }) => createdAt.getMonth() === index)
+          .filter(({ type }) => type === '3.0 breakdown');
       })
       .map((month) => month.reduce((acc, { downtime }) => acc + downtime, 0));
   }
 
   get availibleHoursInMonths() {
-    return this.tableOfMonths.map((month, index) => {
-      let daysInMonth = getDaysInMonth(new Date(2022, index));
-      let availibleHoursInMonths = daysInMonth * 24;
-      return availibleHoursInMonths;
-    });
+    return this.tableOfMonths.map(
+      (month, index) => getDaysInMonth(new Date(2022, index)) * 24
+    );
   }
 
   get mtbf() {
-    return this.tableOfMonths.map((month, index) => {
-      console.log(index);
-      return (
+    return this.tableOfMonths.map(
+      (month, index) =>
         this.availibleHoursInMonths[index] / this.numberOfBreakdowns[index]
-      );
-    });
+    );
   }
 
   get mttr() {
-    return this.tableOfMonths.map((month, index) => {
-      console.log(index);
-      return (
+    return this.tableOfMonths.map(
+      (month, index) =>
         this.numberTimeOfBreakdowns[index] / this.numberOfBreakdowns[index]
-      );
-    });
+    );
   }
 }
