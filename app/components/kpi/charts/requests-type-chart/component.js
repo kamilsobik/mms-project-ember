@@ -10,7 +10,7 @@ export default class RequestTypeComponent extends Component {
           borderColor: 'rgb(0, 255, 0)',
           lineTension: 0.2,
           pointRadius: 5,
-          data: this.args.tableOfMonthsWithRequestsTpm,
+          data: this.args.tableOfMonthsWithRequests('1.0 tpm'),
         },
         {
           label: 'Fault',
@@ -18,7 +18,7 @@ export default class RequestTypeComponent extends Component {
           borderColor: 'rgb(255, 180, 1)',
           lineTension: 0.2,
           pointRadius: 5,
-          data: this.args.tableOfMonthsWithRequestsFault,
+          data: this.args.tableOfMonthsWithRequests('2.0 fault'),
         },
         {
           label: 'Breakdown',
@@ -26,7 +26,7 @@ export default class RequestTypeComponent extends Component {
           borderColor: 'rgb(255, 0, 0)',
           lineTension: 0.2,
           pointRadius: 5,
-          data: this.args.tableOfMonthsWithRequestsBreakdown,
+          data: this.args.tableOfMonthsWithRequests('3.0 breakdown'),
         },
       ],
       labels: this.args.tableOfMonths,
@@ -41,7 +41,7 @@ export default class RequestTypeComponent extends Component {
           {
             ticks: {
               min: 0,
-              max: 6,
+              max: 7,
             },
           },
         ],

@@ -5,7 +5,7 @@ export default class KpiMainKpiChartComponent extends Component {
     const data = {
       datasets: [
         {
-          data: [75, 51, 67, 87, 55, 34, 67, 65, 76, 35, 45, 57],
+          data: this.args.mtbf,
           backgroundColor: 'rgba(75, 192, 192, 0.3)',
           hoverBackgroundColor: 'rgba(75, 192, 192, 0.7)',
           borderColor: 'rgb(75, 192, 192)',
@@ -14,7 +14,7 @@ export default class KpiMainKpiChartComponent extends Component {
           label: 'MTBF [h]',
         },
         {
-          data: [12, 16, 11, 5, 7, 12, 11, 3, 8, 4, 8, 5],
+          data: this.args.mttr,
           backgroundColor: 'rgba(255, 99, 132, 0.3)',
           hoverBackgroundColor: 'rgba(255, 99, 132, 0.7)',
           borderColor: 'rgb(255, 99, 132)',
@@ -23,7 +23,7 @@ export default class KpiMainKpiChartComponent extends Component {
           label: 'MTTR [h]',
         },
         {
-          data: [45, 78, 67, 73, 49, 61, 69, 71, 59, 52, 43, 38],
+          data: this.args.numberTimeOfBreakdowns,
           backgroundColor: 'rgba(255, 205, 86, 0.3)',
           hoverBackgroundColor: 'rgba(255, 205, 86, 0.7)',
           borderColor: 'rgb(255, 205, 86)',

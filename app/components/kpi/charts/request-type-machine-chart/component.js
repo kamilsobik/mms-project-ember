@@ -7,7 +7,7 @@ export default class RequestTypeMachineComponent extends Component {
       datasets: [
         {
           label: 'Breakdown',
-          data: this.args.numberOfRequestByTypeBreakdown,
+          data: this.args.numberOfRequestByType('3.0 breakdown'),
           fill: true,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgb(255, 99, 132)',
@@ -16,7 +16,7 @@ export default class RequestTypeMachineComponent extends Component {
         },
         {
           label: 'Fault',
-          data: this.args.numberOfRequestByTypeFault,
+          data: this.args.numberOfRequestByType('2.0 fault'),
           fill: true,
           backgroundColor: 'rgba(255, 205, 86, 0.2)',
           borderColor: 'rgb(255, 205, 86)',
@@ -25,7 +25,7 @@ export default class RequestTypeMachineComponent extends Component {
         },
         {
           label: 'TPM',
-          data: this.args.numberOfRequestByTypeTPM,
+          data: this.args.numberOfRequestByType('1.0 tpm'),
           fill: true,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgb(75, 192, 192)',
@@ -45,7 +45,7 @@ export default class RequestTypeMachineComponent extends Component {
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 8,
+          suggestedMax: 6,
         },
       },
     };

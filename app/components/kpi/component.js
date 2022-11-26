@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
 import { format, getDaysInMonth } from 'date-fns';
+import { action } from '@ember/object';
 
 export default class KpiComponent extends Component {
   @service store;
@@ -37,33 +38,33 @@ export default class KpiComponent extends Component {
     ];
   }
 
-  get tableOfMonthsWithRequestsTpm() {
+  @action
+  tableOfMonthsWithRequests(requestType) {
     return this.tableOfMonths.map((month, index) => {
       return this.allClosedRequests
-        .filter((request) => {
-          let requestMonth = request.createdAt.getMonth();
+        .filter(({ createdAt }) => {
+          let requestMonth = createdAt.getMonth();
           return requestMonth === index;
         })
-        .filter((request) => {
-          return request.type === '1.0 tpm';
+        .filter(({ type }) => {
+          return type === requestType;
         }).length;
     });
   }
 
-  get tableOfMonthsWithRequestsFault() {
-    return this.tableOfMonths.map((month, index) => {
+  @action numberOfRequestByType(requestType) {
+    return this.machinesName.map((machine) => {
       return this.allClosedRequests
         .filter((request) => {
-          let requestMonth = request.createdAt.getMonth();
-          return requestMonth === index;
+          return request.type === requestType;
         })
         .filter((request) => {
-          return request.type === '2.0 fault';
+          return request.machine === machine;
         }).length;
     });
   }
 
-  get tableOfMonthsWithRequestsBreakdown() {
+  get numberOfBreakdowns() {
     return this.tableOfMonths.map((month, index) => {
       return this.allClosedRequests
         .filter((request) => {
@@ -76,40 +77,19 @@ export default class KpiComponent extends Component {
     });
   }
 
-  get numberOfRequestByTypeTPM() {
-    return this.machinesName.map((machine) => {
-      return this.allClosedRequests
-        .filter((request) => {
-          return request.type === '1.0 tpm';
-        })
-        .filter((request) => {
-          return request.machine === machine;
-        }).length;
-    });
-  }
-
-  get numberOfRequestByTypeFault() {
-    return this.machinesName.map((machine) => {
-      return this.allClosedRequests
-        .filter((request) => {
-          return request.type === '2.0 fault';
-        })
-        .filter((request) => {
-          return request.machine === machine;
-        }).length;
-    });
-  }
-
-  get numberOfRequestByTypeBreakdown() {
-    return this.machinesName.map((machine) => {
-      return this.allClosedRequests
-        .filter((request) => {
-          return request.type === '3.0 breakdown';
-        })
-        .filter((request) => {
-          return request.machine === machine;
-        }).length;
-    });
+  get numberTimeOfBreakdowns() {
+    return this.tableOfMonths
+      .map((month, index) => {
+        return this.allClosedRequests
+          .filter(({ createdAt }) => {
+            let requestMonth = createdAt.getMonth();
+            return requestMonth === index;
+          })
+          .filter(({ type }) => {
+            return type === '3.0 breakdown';
+          });
+      })
+      .map((month) => month.reduce((acc, { downtime }) => acc + downtime, 0));
   }
 
   get availibleHoursInMonths() {
@@ -120,13 +100,21 @@ export default class KpiComponent extends Component {
     });
   }
 
-  // get numberOfRequestsByType() {
-  //   return [
-  //     ...this.requestTypes.map((type) => {
-  //       return this.args.model.filter((request) => {
-  //         return request.type === type;
-  //       }).length;
-  //     }),
-  //   ];
-  // }
+  get mtbf() {
+    return this.tableOfMonths.map((month, index) => {
+      console.log(index);
+      return (
+        this.availibleHoursInMonths[index] / this.numberOfBreakdowns[index]
+      );
+    });
+  }
+
+  get mttr() {
+    return this.tableOfMonths.map((month, index) => {
+      console.log(index);
+      return (
+        this.numberTimeOfBreakdowns[index] / this.numberOfBreakdowns[index]
+      );
+    });
+  }
 }

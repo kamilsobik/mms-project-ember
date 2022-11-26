@@ -4,7 +4,7 @@ export default class RequestModel extends Model {
   @attr('string') type;
   @attr('string') machine;
   @attr('string') title;
-  @attr('string') downtime;
+  @attr('number') downtime;
   @attr('string') solution;
   @attr('string', { defaultValue: 'open' }) status;
   @attr('date', { defaultValue: () => new Date() }) createdAt;
