@@ -17,7 +17,7 @@
         <td>{{request.owner.username}}</td>
         <td>{{request.machine}}</td>
         <td>{{request.title}}</td>
-        <td>{{moment-format request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
+        <td>{{format-date request.createdAt 'dd-MM-yyyy HH:mm'}}</td>
       </tr>
     {{/each}}
   </tbody>
