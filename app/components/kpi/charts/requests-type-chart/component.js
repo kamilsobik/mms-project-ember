@@ -2,40 +2,38 @@ import Component from '@glimmer/component';
 
 export default class RequestTypeComponent extends Component {
   get chartData() {
-    const data = {
+    const commonOptions = {
+      fill: false,
+      lineTension: 0.2,
+      pointRadius: 5,
+    };
+
+    return {
       labels: this.args.tableOfMonths,
       datasets: [
         {
+          ...commonOptions,
           label: 'TPM',
-          fill: false,
           borderColor: 'rgb(0, 255, 0)',
-          lineTension: 0.2,
-          pointRadius: 5,
           data: this.args.tableOfMonthsWithRequests('1.0 tpm'),
         },
         {
+          ...commonOptions,
           label: 'Fault',
-          fill: false,
           borderColor: 'rgb(255, 180, 1)',
-          lineTension: 0.2,
-          pointRadius: 5,
           data: this.args.tableOfMonthsWithRequests('2.0 fault'),
         },
         {
+          ...commonOptions,
           label: 'Breakdown',
-          fill: false,
           borderColor: 'rgb(255, 0, 0)',
-          lineTension: 0.2,
-          pointRadius: 5,
           data: this.args.tableOfMonthsWithRequests('3.0 breakdown'),
         },
       ],
     };
-    return data;
   }
 
   get chartOptions() {
-    const options = {};
-    return options;
+    return {};
   }
 }
