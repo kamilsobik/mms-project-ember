@@ -5,5 +5,5 @@
   <td>{{@request.title}}</td>
   <td>{{@request.solution}}</td>
   <td>{{@request.downtime}}</td>
-  <td>{{moment-format @request.createdAt 'DD-MM-YYYY  HH:mm:ss'}}</td>
+  <td>{{format-date @request.createdAt 'dd-MM-yyyy HH:mm'}}</td>
 </tr>
