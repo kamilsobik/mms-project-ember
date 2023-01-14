@@ -1,6 +1,7 @@
 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
   <div class='container'>
-    <LinkTo class='navbar-brand' @route='home.index'>Main page</LinkTo>
+    <LinkTo class='navbar-brand' data-test-main-link @route='home.index'>Main
+      page</LinkTo>
     <button
       class='navbar-toggler'
       type='button'
@@ -17,29 +18,50 @@
         <li class='nav-item'>
         </li>
         <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.requests'>Requests</LinkTo>
+          <LinkTo
+            class='nav-link'
+            data-test-requests-link
+            @route='home.requests'
+          >Requests</LinkTo>
         </li>
         {{#if this.isRequestorUserType}}
           <li class='nav-item'>
-            <LinkTo class='nav-link' @route='home.open-request'>Open new request</LinkTo>
+            <LinkTo
+              class='nav-link'
+              data-test-open-request-link
+              @route='home.open-request'
+            >Open new request</LinkTo>
           </li>
         {{/if}}
         {{#if this.isResponderUserType}}
           <li class='nav-item'>
-            <LinkTo class='nav-link' @route='home.close-request'>Close request</LinkTo>
+            <LinkTo
+              class='nav-link'
+              data-test-close-request-link
+              @route='home.close-request'
+            >Close request</LinkTo>
           </li>
         {{/if}}
         {{#if this.isAdminUserType}}
           <li class='nav-item'>
-            <LinkTo class='nav-link' @route='home.users'>Users</LinkTo>
+            <LinkTo
+              class='nav-link'
+              data-test-users-link
+              @route='home.users'
+            >Users</LinkTo>
           </li>
         {{/if}}
         <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.kpi'>KPI</LinkTo>
+          <LinkTo
+            class='nav-link'
+            data-test-kpi-link
+            @route='home.kpi'
+          >KPI</LinkTo>
         </li>
         <li class='nav-item'>
           <LinkTo
             class='nav-link'
+            data-test-archive-link
             @route='home.request-archive'
           >Archive</LinkTo>
         </li>
@@ -47,6 +69,7 @@
           <span
             role='button'
             class='nav-link'
+            data-test-logout-link
             {{on 'click' this.onLogout}}
           >Logout</span>
         </li>
