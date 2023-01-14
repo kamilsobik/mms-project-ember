@@ -1,14 +1,16 @@
 <div class='container-index'>
-  <h3>Computerised Maintenance Management System</h3>
+  <h3 data-test-title>Computerised Maintenance Management System</h3>
   <div class='d-flex m-5'>
     <Shared::Button
       class='btn-main col-5 mx-auto'
+      data-test-open-request-button
       @variant='danger'
       @label='Open request'
       @onClick={{this.onShowRequest}}
     />
     <Shared::Button
       class='btn-main col-5 mx-auto'
+      data-test-open-kpi-button
       @variant='success'
       @label='KPI'
       @onClick={{this.onShowKpi}}
@@ -17,12 +19,14 @@
   <div class='d-flex m-5'>
     <Shared::Button
       class='btn-main col-5 mx-auto'
+      data-test-archive-button
       @variant='primary'
       @label='Archive'
       @onClick={{this.onShowArchive}}
     />
     <Shared::Button
       class='btn-main col-5 mx-auto'
+      data-test-logout-button
       @variant='warning'
       @label='Logout'
       @onClick={{this.onShowLogout}}
