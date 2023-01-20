@@ -1,23 +1,26 @@
 <table class='table table-striped'>
   <thead class='table-active'>
     <tr>
-      <th scope='col'>Status</th>
-      <th scope='col'>Type</th>
-      <th scope='col'>Requestor</th>
-      <th scope='col'>Machine</th>
-      <th scope='col'>Title</th>
-      <th scope='col'>Created date</th>
+      <th scope='col' data-test-table-status>Status</th>
+      <th scope='col' data-test-table-type>Type</th>
+      <th scope='col' data-test-table-requestor>Requestor</th>
+      <th scope='col' data-test-table-machine>Machine</th>
+      <th scope='col' data-test-table-title>Title</th>
+      <th scope='col' data-test-table-create-date>Created date</th>
     </tr>
   </thead>
   <tbody>
-    {{#each this.filteredRequests as |request|}}
-      <tr class={{class-table request.type}}>
-        <td>{{request.status}}</td>
-        <td>{{request.type}}</td>
-        <td>{{request.owner.username}}</td>
-        <td>{{request.machine}}</td>
-        <td>{{request.title}}</td>
-        <td>{{format-date request.createdAt 'dd-MM-yyyy HH:mm'}}</td>
+    {{#each this.filteredRequests as |request index|}}
+      <tr data-test-tr={{index}} class={{class-table request.type}}>
+        <td data-test-td-status>{{request.status}}</td>
+        <td data-test-td-type>{{request.type}}</td>
+        <td data-test-td-username>{{request.owner.username}}</td>
+        <td data-test-td-machine>{{request.machine}}</td>
+        <td data-test-td-title>{{request.title}}</td>
+        <td data-test-td-createdAt>{{format-date
+            request.createdAt
+            'dd-MM-yyyy HH:mm'
+          }}</td>
       </tr>
     {{/each}}
   </tbody>
