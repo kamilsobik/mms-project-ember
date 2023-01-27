@@ -1,4 +1,4 @@
-import Controller from '@ember/controller';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
@@ -8,7 +8,7 @@ import ENV from 'mms-ember-project/config/environment';
 const clientId = ENV.AUTH0_CLIENT_ID;
 const domain = ENV.AUTH0_DOMAIN;
 
-export default class LoginController extends Controller {
+export default class LoginComponent extends Component {
   @service store;
   @tracked loginValue;
   @tracked passwordValue;
