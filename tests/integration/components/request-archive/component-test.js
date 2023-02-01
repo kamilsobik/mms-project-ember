@@ -6,7 +6,7 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | request-archive', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('check display correct button', async function (assert) {
+  test('check display correct archive request list', async function (assert) {
     const model = [
       {
         id: 0,
