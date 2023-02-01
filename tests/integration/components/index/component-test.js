@@ -11,10 +11,21 @@ module('Integration | Component | index', function (hooks) {
 
     assert
       .dom('[data-test-title]')
-      .hasText('Computerised Maintenance Management System');
-    assert.dom('[data-test-open-request-button]').hasText('Open request');
-    assert.dom('[data-test-open-kpi-button]').hasText('KPI');
-    assert.dom('[data-test-archive-button]').hasText('Archive');
-    assert.dom('[data-test-logout-button]').hasText('Logout');
+      .hasText(
+        'Computerised Maintenance Management System',
+        'Page has correct title'
+      );
+    assert
+      .dom('[data-test-open-request-button]')
+      .hasText('Open request', 'Button "Open request" has correct description');
+    assert
+      .dom('[data-test-open-kpi-button]')
+      .hasText('KPI', 'Button "KPI" has correct description');
+    assert
+      .dom('[data-test-archive-button]')
+      .hasText('Archive', 'Button "Archive" has correct description');
+    assert
+      .dom('[data-test-logout-button]')
+      .hasText('Logout', 'Button "Logout" has correct description');
   });
 });

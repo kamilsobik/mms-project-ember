@@ -34,12 +34,29 @@ module('Integration | Component | request-archive', function (hooks) {
 
     this.set('model', model);
     await render(hbs`<RequestArchive @model={{this.model}}/>`);
-    assert.dom('[data-test-table-type]').hasText('Type');
-    assert.dom('[data-test-table-requestor]').hasText('Requestor');
-    assert.dom('[data-test-table-machine]').hasText('Machine');
-    assert.dom('[data-test-table-title]').hasText('Title');
-    assert.dom('[data-test-table-solution]').hasText('Solution');
-    assert.dom('[data-test-table-downtime]').hasText('Downtime [min]');
-    assert.dom('[data-test-table-created-date]').hasText('Created date');
+    assert
+      .dom('[data-test-table-type]')
+      .hasText('Type', 'Column "Type" has correct description');
+    assert
+      .dom('[data-test-table-requestor]')
+      .hasText('Requestor', 'Column "Requestor" has correct description');
+    assert
+      .dom('[data-test-table-machine]')
+      .hasText('Machine', 'Column "Machine" has correct description');
+    assert
+      .dom('[data-test-table-title]')
+      .hasText('Title', 'Column "Title" has correct description');
+    assert
+      .dom('[data-test-table-solution]')
+      .hasText('Solution', 'Column "Solution" has correct description');
+    assert
+      .dom('[data-test-table-downtime]')
+      .hasText(
+        'Downtime [min]',
+        'Column "Donwtime [min]" has correct description'
+      );
+    assert
+      .dom('[data-test-table-created-date]')
+      .hasText('Created date', 'Column "Create date" has correct description');
   });
 });

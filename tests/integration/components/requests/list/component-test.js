@@ -34,16 +34,33 @@ module('Integration | Component | requests/list', function (hooks) {
 
     this.set('model', model);
     await render(hbs`<Requests::List @model={{this.model}} />`);
-    assert.dom('[data-test-table-status]').hasText('Status');
-    assert.dom('[data-test-table-type]').hasText('Type');
-    assert.dom('[data-test-table-requestor]').hasText('Requestor');
-    assert.dom('[data-test-table-machine]').hasText('Machine');
-    assert.dom('[data-test-table-title]').hasText('Title');
-    assert.dom('[data-test-table-create-date]').hasText('Created date');
+    assert
+      .dom('[data-test-table-status]')
+      .hasText('Status', 'Column "Status" has correct description');
+    assert
+      .dom('[data-test-table-type]')
+      .hasText('Type', 'Column "Type" has correct description');
+    assert
+      .dom('[data-test-table-requestor]')
+      .hasText('Requestor', 'Column "Requestor" has correct description');
+    assert
+      .dom('[data-test-table-machine]')
+      .hasText('Machine', 'Column "Machine" has correct description');
+    assert
+      .dom('[data-test-table-title]')
+      .hasText('Title', 'Column "Title" has correct description');
+    assert
+      .dom('[data-test-table-create-date]')
+      .hasText('Created date', 'Column "Created date" has correct description');
 
-    assert.dom("[data-test-tr='0'] [data-test-td-status]").hasText('open');
     assert
       .dom("[data-test-tr='0'] [data-test-td-status]")
-      .doesNotIncludeText('close');
+      .hasText('open', 'Column "Open" has one request with status open');
+    assert
+      .dom("[data-test-tr='0'] [data-test-td-status]")
+      .doesNotIncludeText(
+        'close',
+        'Column "status" do not have request with status close'
+      );
   });
 });
