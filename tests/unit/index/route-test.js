@@ -4,8 +4,13 @@ import { setupTest } from 'mms-ember-project/tests/helpers';
 module('Unit | Route | index', function (hooks) {
   setupTest(hooks);
 
-  test.skip('it exists', function (assert) {
+  test('it exists', function (assert) {
     let route = this.owner.lookup('route:index');
+    assert.ok(route);
+  });
+
+  test('it exists', function (assert) {
+    const someIndex = this.owner.lookup('service:some-index');
     assert.ok(route);
   });
 });

@@ -35,6 +35,7 @@ export default class LoginComponent extends Component {
   async on0AuthLoginOrRegister() {
     const option = { auth: { redirect: false } };
     const lock = new Auth0Lock(clientId, domain, option);
+    debugger;
     lock.show({ allowedConnections: ['google-oauth2'] });
     lock.on('authenticated', (authResult) => {
       lock.getUserInfo(authResult.accessToken, async (error, profileResult) => {
