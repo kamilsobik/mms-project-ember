@@ -6,7 +6,7 @@ module('Unit | Helpers | class-user-table', function (hooks) {
   setupTest(hooks);
 
   test('Adding correctly css class for tables with user type', function (assert) {
-    assert.equal(
+    assert.strictEqual(
       classUserTable(['requestor']),
       'table-success',
       'User type Requestor return class table-success'
@@ -21,7 +21,7 @@ module('Unit | Helpers | class-user-table', function (hooks) {
       'table-danger',
       'User type Requestor does not return class table-danger'
     );
-    assert.equal(
+    assert.strictEqual(
       classUserTable(['responder']),
       'table-warning',
       'User type Responder return class table-warning'
@@ -36,7 +36,7 @@ module('Unit | Helpers | class-user-table', function (hooks) {
       'table-danger',
       'User type Responder does not return class table-danger'
     );
-    assert.equal(
+    assert.strictEqual(
       classUserTable(['admin']),
       'table-danger',
       'User type Admin return class table-danger'
