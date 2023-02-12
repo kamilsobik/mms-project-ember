@@ -37,7 +37,7 @@ module('Integration | Component | users/list', function (hooks) {
       .dom('[data-test-table-username]')
       .hasText('Username', 'Column "Username" has correct description');
     assert
-      .dom('[data-test-table-emial]')
+      .dom('[data-test-table-email]')
       .hasText('Email', 'Column "Email" has correct description');
     assert
       .dom('[data-test-table-password]')

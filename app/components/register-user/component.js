@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { storageFor } from 'ember-local-storage';
 
-export default class RegisterComponent extends Component {
+export default class RegisterUserComponent extends Component {
   @service store;
   @service router;
   @storageFor('logged-as') loggedAs;
