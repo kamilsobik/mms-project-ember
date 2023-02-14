@@ -18,7 +18,7 @@ Login information:
   - password: responder123
     ​
 - Requestor:
-  - user: requesto
+  - user: requestor
   - password: requestor123
 
 ## Prerequisites
