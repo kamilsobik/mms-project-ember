@@ -9,10 +9,10 @@ See the live version of [Computerised Maintenance Management System](https://mms
 A computerized maintenance management system or CMMS is software that centralizes maintenance information and facilitates the processes of maintenance operations. It helps optimize the utilization and availability of physical equipment like vehicles, machinery, communications, plant infrastructures and other assets. This project is the first part of all - helping to manage failure of machinery.
 
 **Main features**:
-- adding failure requests
-- closing failure requests
-- login with different access levels
-- requset archive
+- Adding failure requests
+- Closing failure requests
+- Login with different access levels
+- Requset archive
 - KPI charts
 
 &nbsp;
@@ -55,16 +55,16 @@ You will need the following things properly installed on your computer.
 - Visit your app at [http://localhost:4200](http://localhost:4200).
 - Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Login information:
+### Login information
 
 - Admin:
   - user: admin
   - password: admin123
-    ​
+    
 - Responder:
   - user: responder
   - password: responder123
-    ​
+    
 - Requestor:
   - user: requestor
   - password: requestor123
@@ -95,10 +95,10 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 - Bootstrap for styling app
 - Auth0 to login by google
+- Fontawsome for beauty icon
 - date-fsn to magane date 
 - ember-power-select for all select input
 - ember-chart for a amazing chart with KPI
-- fontawsome for beauty icon
 
 
 ## 📺 Screenshots 
