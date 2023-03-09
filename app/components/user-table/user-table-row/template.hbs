@@ -1,9 +1,9 @@
-<tr class={{class-user-table @user.userType}}>
-  <td>{{@user.username}}</td>
-  <td>{{@user.email}}</td>
-  <td>{{@user.password}}</td>
-  <td>{{@user.userType}}</td>
-  <td align='center'>
+<tr data-test-tr={{@index}} class={{class-user-table @user.userType}}>
+  <td data-test-td-username>{{@user.username}}</td>
+  <td data-test-td-user-email>{{@user.email}}</td>
+  <td data-test-td--password>{{@user.password}}</td>
+  <td data-test-td-usertype>{{@user.userType}}</td>
+  <td align='center' data-test-td-button>
     <Shared::Button
       class='btn'
       @variant='success'
