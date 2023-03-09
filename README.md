@@ -1,8 +1,15 @@
+<p>
+    <img src="https://img.shields.io/github/last-commit/kamilsobik/mms-project-ember?style=flat-square" alt="Last update">
+</p>
 <p align="center">
     <img src="https://i.ibb.co/9yC0rW8/Screenshot-2023-03-09-at-12-03-37.png" alt="Screen Shot">
 </p>
 
-# Computerised Maintenance Management System (CMMS)
+# Computerised Maintenance Management System (CMMS) 
+
+
+
+
 
 See the live version of [Computerised Maintenance Management System](https://mmsemberproject.netlify.app/).
 
@@ -22,6 +29,10 @@ A computerized maintenance management system or CMMS is software that centralize
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Ember.js](https://img.shields.io/badge/ember.js-%231572B6.svg?style=for-the-badge&logo=ember&logoColor=%23F7DF1E)
+
+<p align="center">
+    <img src="https://emberjs.com/images/tomsters/bielsko-biala-tomster750w-6d4ee74c3b3b07a62fd950633f5c4b79.webp" alt="Screen Shot">
+</p>
 
 
 &nbsp;
