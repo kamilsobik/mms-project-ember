@@ -107,7 +107,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 - Bootstrap for styling app
 - Auth0 to login by google
 - Fontawsome for beauty icon
-- date-fsn to magane date 
+- date-fns to magane date 
 - ember-power-select for all select input
 - ember-chart for a amazing chart with KPI
 
