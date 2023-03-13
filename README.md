@@ -135,4 +135,4 @@ If you have any suggestion or question do not resist to contact with me
 &nbsp;
 
 ## 👏 Special thanks
-Thanks to my [Mentor - wozny1989](https://github.com/wozny1989) – for providing me with this task and for code review.
+Thanks to my [Mentor - wozny1989](https://github.com/wozny1989) – for good advice and for code review.
